@@ -3,5 +3,5 @@
 ## Bootstrap
 
 ```bash
-flux bootstrap git --url=ssh://git@github.com/spuxx1701/flux.git --branch=master --path=./clusters/jupiter
+flux bootstrap github --owner=spuxx1701 --repository=flux --branch=master --path=./clusters/jupiter --components-extra=image-automation-controller,image-reflector-controller
 ```
