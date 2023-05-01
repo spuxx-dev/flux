@@ -1,0 +1,26 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: spuxx-dev
+  namespace: spuxx-dev
+spec:
+  interval: 30s
+  url: https://github.com/spuxx1701/spuxx-dev
+  ref:
+    branch: master
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: spuxx-dev
+  namespace: spuxx-dev
+spec:
+  interval: 1h
+  targetNamespace: spuxx-dev
+  sourceRef:
+    kind: GitRepository
+    name: spuxx-dev
+  path: "./.kustomize"
+  prune: true
+  timeout: 3m
