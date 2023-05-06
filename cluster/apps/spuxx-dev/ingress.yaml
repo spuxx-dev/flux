@@ -17,7 +17,7 @@ spec:
     - host: spuxx.dev
       http:
         paths:
-          - path: "/(/|$)(.*)"
+          - path: /(/|$)(.*)
             pathType: Prefix
             backend:
               service:
@@ -27,7 +27,7 @@ spec:
     - host: www.spuxx.dev
       http:
         paths:
-          - path: "/(/|$)(.*)"
+          - path: (/|$)(.*)
             pathType: Prefix
             backend:
               service:
