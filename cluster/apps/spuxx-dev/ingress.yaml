@@ -12,7 +12,7 @@ spec:
   tls:
     - hosts:
         - "*.leopoldhock.de"
-      secretName: spuxx.dev
+      secretName: leopoldhock.de
   rules:
     - host: leopoldhock.de
       http:
