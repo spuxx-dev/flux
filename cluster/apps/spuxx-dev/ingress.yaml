@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "*.leopoldhock.de"
-      secretName: leopoldhock.de
+        - "*.spuxx.dev"
+      secretName: spuxx.dev
   rules:
-    - host: leopoldhock.de
+    - host: spuxx.dev
       http:
         paths:
           - path: "/(/|$)(.*)"
