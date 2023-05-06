@@ -11,4 +11,4 @@ spec:
     pattern: 'master*'
   policy:
     alphabetical:
-      order: desc
+      order: asc
