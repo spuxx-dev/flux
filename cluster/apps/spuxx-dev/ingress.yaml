@@ -32,7 +32,7 @@ metadata:
   namespace: spuxx-dev
   annotations:
     nginx.ingress.kubernetes.io/server-snippet: |
-    return 301 https://spuxx.dev;
+      return 301 https://spuxx.dev;
 spec:
   rules:
     - host: leopoldhock.de
