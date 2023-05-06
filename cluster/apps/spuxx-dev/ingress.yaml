@@ -40,3 +40,8 @@ spec:
         paths:
           - path: /
             pathType: Prefix
+            backend:
+              service:
+                name: spuxx-dev
+                port:
+                  number: 3000
