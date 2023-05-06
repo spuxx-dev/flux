@@ -23,7 +23,7 @@ spec:
               service:
                 name: spuxx-dev
                 port:
-                  number: 3000
+                  number: 8080
     - host: www.spuxx.dev
       http:
         paths:
@@ -33,7 +33,7 @@ spec:
               service:
                 name: spuxx-dev
                 port:
-                  number: 3000
+                  number: 8080
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -58,7 +58,7 @@ spec:
               service:
                 name: spuxx-dev
                 port:
-                  number: 3000
+                  number: 8080
     - host: www.leopoldhock.de
       http:
         paths:
@@ -68,5 +68,5 @@ spec:
               service:
                 name: spuxx-dev
                 port:
-                  number: 3000
+                  number: 8080
                   
