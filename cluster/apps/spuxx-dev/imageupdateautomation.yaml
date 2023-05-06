@@ -22,5 +22,5 @@ spec:
     push:
       branch: master
   update:
-    path: ./clusters/jupiter/apps/spuxx-dev
+    path: ./cluster/apps/spuxx-dev
     strategy: Setters
