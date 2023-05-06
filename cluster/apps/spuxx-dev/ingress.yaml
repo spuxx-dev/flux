@@ -7,6 +7,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   tls:
     - hosts:
@@ -16,7 +17,7 @@ spec:
     - host: spuxx.dev
       http:
         paths:
-          - path: /
+          - path: /(/|$)(.*)
             pathType: Prefix
             backend:
               service:
@@ -26,7 +27,7 @@ spec:
     - host: www.spuxx.dev
       http:
         paths:
-          - path: /
+          - path: /(/|$)(.*)
             pathType: Prefix
             backend:
               service:
@@ -51,7 +52,7 @@ spec:
     - host: leopoldhock.de
       http:
         paths:
-          - path: /
+          - path: /(/|$)(.*)
             pathType: Prefix
             backend:
               service:
@@ -61,7 +62,7 @@ spec:
     - host: www.leopoldhock.de
       http:
         paths:
-          - path: /
+          - path: /(/|$)(.*)
             pathType: Prefix
             backend:
               service:
