@@ -34,6 +34,10 @@ metadata:
     nginx.ingress.kubernetes.io/server-snippet: |
       return 301 https://spuxx.dev;
 spec:
+  tls:
+    - hosts:
+        - "*.leopoldhock.de"
+      secretName: leopoldhock.de
   rules:
     - host: leopoldhock.de
       http:
