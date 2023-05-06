@@ -6,5 +6,5 @@ metadata:
   namespace: spuxx-dev
 spec:
   image: spuxx/spuxx-dev
-  interval: 1m
+  interval: 5m
   provider: generic
