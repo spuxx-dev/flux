@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spuxx-dev
+  namespace: spuxx-dev
+  labels:
+    app: spuxx-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spuxx-dev
+  template:
+    metadata:
+      labels:
+        app: spuxx-dev
+    spec:
+      containers:
+        - name: spuxx-dev
+          image: spuxx/spuxx-dev # {"$imagepolicy": "spuxx-dev:spuxx-dev"}
+          ports:
+            - containerPort: 3000
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
