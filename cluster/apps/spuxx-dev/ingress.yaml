@@ -24,6 +24,16 @@ spec:
                 name: spuxx-dev
                 port:
                   number: 3000
+    - host: www.spuxx.dev
+      http:
+        paths:
+          - path: "/(/|$)(.*)"
+            pathType: Prefix
+            backend:
+              service:
+                name: spuxx-dev
+                port:
+                  number: 3000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -49,3 +59,14 @@ spec:
                 name: spuxx-dev
                 port:
                   number: 3000
+    - host: www.leopoldhock.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: spuxx-dev
+                port:
+                  number: 3000
+                  
