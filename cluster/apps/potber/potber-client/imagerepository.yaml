@@ -1,0 +1,10 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: potber-api
+  namespace: potber
+spec:
+  image: spuxx/potber-api
+  interval: 5m
+  provider: generic
