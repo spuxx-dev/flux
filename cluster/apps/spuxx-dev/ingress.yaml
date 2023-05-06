@@ -7,6 +7,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   tls:
     - hosts:
@@ -23,3 +24,19 @@ spec:
                 name: spuxx-dev
                 port:
                   number: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: leopoldhock-de-redirect
+  namespace: spuxx-dev
+  annotations:
+    nginx.ingress.kubernetes.io/server-snippet: |
+    return 301 https://spuxx.dev;
+spec:
+  rules:
+    - host: leopoldhock.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
