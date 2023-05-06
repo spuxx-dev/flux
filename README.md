@@ -1,6 +1,7 @@
 # Flux
 
 ## Bootstrap
+Will bootstrap flux using github and the given repository. It'll ask for a PAT that will only be used during bootstrapping. After that, the deploy key created in the repository will be used.
 
 ```bash
 flux bootstrap github \
