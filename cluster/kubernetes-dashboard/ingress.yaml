@@ -12,10 +12,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - "*.jupiter.leopoldhock.de"
-      secretName: jupiter.leopoldhock.de
+        - "*.spuxx.dev"
+      secretName: spuxx.dev
   rules:
-    - host: kube.jupiter.leopoldhock.de
+    - host: kube.spuxx.dev
       http:
         paths:
           - path: /
