@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: potber-api-production
+  namespace: potber
+  labels:
+    app: potber-api-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: potber-api-production
+  template:
+    metadata:
+      labels:
+        app: potber-api-production
+    spec:
+      containers:
+        - name: potber-api-production
+          image: spuxx/potber-api:master-20230516-101219-c3d8ba46e01b37f33ae74fdc7e9c8c9dcf9fc050 # {"$imagepolicy": "potber:potber-api-production"}
+          env:
+            - name: APP_CLIENT_URL
+              value: https://potber.spuxx.dev
+            - name: APP_API_URL
+              value: https://potber-api.spuxx.dev
+            - name: SWAGGER_TEST_THREAD_ID
+              value: "219289"
+            - name: CORS_ALLOWED_ORIGINS
+              value: https://potber.spuxx.dev
+            - name: AUTH_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: potber-api
+                  key: AUTH_JWT_SECRET
+          ports:
+            - containerPort: 3000
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
