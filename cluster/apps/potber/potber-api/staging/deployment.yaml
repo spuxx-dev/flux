@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-api-staging
-          image: spuxx/potber-client # {"$imagepolicy": "potber:potber-api-staging"}
+          image: spuxx/potber-api:master-20230516-092446-84ab891354e54fae72d06d7eb023ded1723957c7 # {"$imagepolicy": "potber:potber-api-staging"}
           env:
             - name: APP_CLIENT_URL
               value: https://potber-test.spuxx.dev
