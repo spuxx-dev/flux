@@ -18,6 +18,20 @@ spec:
       containers:
         - name: potber-api-staging
           image: spuxx/potber-client # {"$imagepolicy": "potber:potber-api-staging"}
+          env:
+            - name: APP_CLIENT_URL
+              value: https://potber-test.spuxx.dev
+            - name: APP_API_URL
+              value: https://potber-api-test.spuxx.dev
+            - name: SWAGGER_TEST_THREAD_ID
+              value: 219289
+            - name: CORS_ALLOWED_ORIGINS
+              value: https://potber-test.spuxx.dev
+            - name: AUTH_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: potber-api
+                  key: AUTH_JWT_SECRET
           ports:
             - containerPort: 3000
           securityContext:
