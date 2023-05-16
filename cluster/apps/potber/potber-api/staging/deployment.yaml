@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: potber-api-staging
+  namespace: potber
+  labels:
+    app: potber-api-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: potber-api-staging
+  template:
+    metadata:
+      labels:
+        app: potber-api-staging
+    spec:
+      containers:
+        - name: potber-api-staging
+          image: spuxx/potber-client # {"$imagepolicy": "potber:potber-api-staging"}
+          ports:
+            - containerPort: 3000
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
