@@ -22,5 +22,5 @@ spec:
     push:
       branch: master
   update:
-    path: ./cluster/apps/potber-client/staging
+    path: ./cluster/apps/potber/potber-client/staging
     strategy: Setters
