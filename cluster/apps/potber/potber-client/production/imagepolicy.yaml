@@ -11,3 +11,4 @@ spec:
     pattern: 'v*'
   policy:
     semver:
+      range: '^1.0.0'
