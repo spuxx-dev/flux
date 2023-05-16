@@ -13,7 +13,7 @@ spec:
         - "*.spuxx.dev"
       secretName: spuxx.dev
   rules:
-    - host: potber-api-test.spuxx.dev
+    - host: potber-api.spuxx.dev
       http:
         paths:
           - path: /
