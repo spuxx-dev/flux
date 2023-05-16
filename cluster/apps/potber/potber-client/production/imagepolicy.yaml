@@ -7,8 +7,6 @@ metadata:
 spec:
   imageRepositoryRef:
     name: potber-api
-  filterTags:
-    pattern: 'v*'
   policy:
     semver:
       range: '^1.0.0'
