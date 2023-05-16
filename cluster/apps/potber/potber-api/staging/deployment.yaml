@@ -19,6 +19,8 @@ spec:
         - name: potber-api-staging
           image: spuxx/potber-api:master-20230516-102519-2dcd101f7bc232dcf0668589154e80ceeb3e9f72 # {"$imagepolicy": "potber:potber-api-staging"}
           env:
+            - name: APP_PORT
+              value: "3000"
             - name: APP_CLIENT_URL
               value: https://potber-test.spuxx.dev
             - name: APP_API_URL
