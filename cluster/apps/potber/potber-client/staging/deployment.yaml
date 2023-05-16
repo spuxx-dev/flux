@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: potber-client-staging
+  namespace: potber
+  labels:
+    app: potber-client-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: potber-client-staging
+  template:
+    metadata:
+      labels:
+        app: potber-client-staging
+    spec:
+      containers:
+        - name: potber-client-staging
+          image: spuxx/potber-client # {"$imagepolicy": "potber-client-staging:potber-client-staging"}
+          ports:
+            - containerPort: 8080
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
