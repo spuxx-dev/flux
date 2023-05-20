@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-client-production
-          image: spuxx/potber-api:1.2.0-rc.3 # {"$imagepolicy": "potber:potber-client-production"}
+          image: spuxx/potber-client:1.3.0-rc.6 # {"$imagepolicy": "potber:potber-client-production"}
           ports:
             - containerPort: 8080
           securityContext:
