@@ -6,5 +6,5 @@ metadata:
   namespace: potber
 spec:
   image: spuxx/potber-api
-  interval: 1m
+  interval: 5m
   provider: generic
