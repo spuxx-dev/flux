@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "*.spuxx.dev"
-      secretName: spuxx.dev
+        - "*.potber.de"
+      secretName: potber.de
   rules:
-    - host: potber-test.spuxx.dev
+    - host: test.potber.de
       http:
         paths:
           - path: /
