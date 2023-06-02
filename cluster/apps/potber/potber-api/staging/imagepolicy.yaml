@@ -8,7 +8,7 @@ spec:
   imageRepositoryRef:
     name: potber-api
   filterTags:
-    pattern: 'master*'
+    pattern: 'main*'
   policy:
     alphabetical:
       order: asc
