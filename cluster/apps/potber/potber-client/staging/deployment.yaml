@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-client-staging
-          image: spuxx/potber-client:main-20230602-104913-2c2194c5e50773b5e20a00219b05881b2628750b # {"$imagepolicy": "potber:potber-client-staging"}
+          image: spuxx/potber-client:main-20230602-104928-1dbe66276bca531c5ffd84e3f843b54da5da10d0 # {"$imagepolicy": "potber:potber-client-staging"}
           ports:
             - containerPort: 8080
           securityContext:
