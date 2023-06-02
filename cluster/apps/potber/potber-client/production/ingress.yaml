@@ -23,3 +23,13 @@ spec:
                 name: potber-client-production
                 port:
                   number: 8080
+    - host: www.potber.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: potber-client-production
+                port:
+                  number: 8080
