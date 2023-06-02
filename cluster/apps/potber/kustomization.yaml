@@ -5,3 +5,4 @@ resources:
   - potber-client
   - potber-api
   - namespace.yaml
+  - certificate.yaml
