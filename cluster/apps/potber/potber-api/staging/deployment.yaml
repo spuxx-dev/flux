@@ -22,13 +22,13 @@ spec:
             - name: APP_PORT
               value: "3000"
             - name: APP_CLIENT_URL
-              value: https://potber-test.spuxx.dev
+              value: https://test.potber.de
             - name: APP_API_URL
-              value: https://potber-api-test.spuxx.dev
+              value: https://test-api.potber.de
             - name: SWAGGER_TEST_THREAD_ID
               value: "219289"
             - name: CORS_ALLOWED_ORIGINS
-              value: https://potber-test.spuxx.dev
+              value: https://test.potber.de
             - name: AUTH_JWT_SECRET
               valueFrom:
                 secretKeyRef:
