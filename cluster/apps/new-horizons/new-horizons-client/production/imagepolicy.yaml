@@ -7,8 +7,6 @@ metadata:
 spec:
   imageRepositoryRef:
     name: new-horizons-client
-  filterTags:
-    pattern: 'main*'
   policy:
-    alphabetical:
-      order: asc
+    semver:
+      range: '^0.x-0'
