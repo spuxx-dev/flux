@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new-horizons-client-staging
+  namespace: new-horizons
+  labels:
+    app: new-horizons-client-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: new-horizons-client-staging
+  template:
+    metadata:
+      labels:
+        app: new-horizons-client-staging
+    spec:
+      containers:
+        - name: new-horizons-client-staging
+          image: spuxx/new-horizons-client:main-20230602-104928-1dbe66276bca531c5ffd84e3f843b54da5da10d0 # {"$imagepolicy": "potber:new-horizons-client-staging"}
+          ports:
+            - containerPort: 8080
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
