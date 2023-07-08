@@ -14,6 +14,9 @@ spec:
         name: mailu
         namespace: mailu
       interval: 5m
+  valuesFrom:
+    - kind: Secret
+    - name: mailu
   values:
     # Documentation: https://github.com/Mailu/helm-charts/blob/master/mailu/values.yaml
     domain: spuxx.dev
