@@ -24,3 +24,5 @@ spec:
     hostnames:
       - spuxx.dev
     domain: spuxx.dev
+    networkPolicy:
+      namespace: ingress
