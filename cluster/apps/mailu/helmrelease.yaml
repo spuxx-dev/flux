@@ -17,7 +17,6 @@ spec:
   valuesFrom:
     - kind: Secret
       name: mailu
-      valuesKey: secretKey
   values:
     # Documentation: https://github.com/Mailu/helm-charts/blob/master/mailu/values.yaml
     domain: spuxx.dev
