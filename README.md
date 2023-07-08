@@ -19,5 +19,5 @@ When prompted, enter the PAT that Flux can use to access this repository.
 
 Flux requires the GPG key for decrypting secrets. Put the key into a text file and add it to Kubernetes like so:
 ```bash
-kubectl create secret generic sops-gpg --namespace=flux-system --from-file=/path/to/file
+gpg --export-secret-keys --armor <key_id> | kubectl create secret generic sops-gpg --namespace=flux-system --from-file=sops.asc=/dev/stdin
 ```
