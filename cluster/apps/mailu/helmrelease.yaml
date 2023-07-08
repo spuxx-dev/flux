@@ -26,5 +26,12 @@ spec:
     domain: spuxx.dev
     networkPolicy:
       namespace: ingress
+    certmanager:
+      issuerName: letsencrypt-prod
+      issuerType: ClusterIssuer
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
     global:
       storageClass: microk8s-hostpath
