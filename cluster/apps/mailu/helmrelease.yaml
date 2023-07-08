@@ -1,3 +1,5 @@
+---
+# Documentation: https://github.com/Mailu/helm-charts/blob/master/mailu/README.md
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -19,4 +21,6 @@ spec:
       name: mailu
   values:
     # Documentation: https://github.com/Mailu/helm-charts/blob/master/mailu/values.yaml
+    hostnames:
+      - spuxx.dev
     domain: spuxx.dev
