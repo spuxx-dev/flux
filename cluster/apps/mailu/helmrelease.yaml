@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: mailu
-      version: '0.3.x'
+      version: "0.3.x"
       sourceRef:
         kind: HelmRepository
         name: mailu
@@ -17,6 +17,7 @@ spec:
   valuesFrom:
     - kind: Secret
       name: mailu
+      valuesKey: stringData
   values:
     # Documentation: https://github.com/Mailu/helm-charts/blob/master/mailu/values.yaml
     domain: spuxx.dev
