@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mailu
+  namespace: mailu
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: mailu
+      version: '0.3.x'
+      sourceRef:
+        kind: HelmRepository
+        name: mailu
+        namespace: mailu
+      interval: 5m
+  values:
+    # Documentation: https://github.com/Mailu/helm-charts/blob/master/mailu/values.yaml
+    domain: spuxx.dev
