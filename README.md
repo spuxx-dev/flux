@@ -22,14 +22,12 @@ Flux requires the GPG key for decrypting secrets. Put the key into a text file a
 gpg --export-secret-keys --armor <key_id> | kubectl create secret generic sops-gpg --namespace=flux-system --from-file=sops.asc=/dev/stdin
 ```
 
-# Set up persistant storage with NFS
+## Setting up persistent storage
 
-Microk8s has a [guide](https://microk8s.io/docs/nfs) on how to set up persistent storage via an NFS service on the machine:
+## Option 1: Hostpath storage
+
+Microk8s offers an addon to easily implement persistent storage via a directory on the host sytem. The guide can be found [here](https://microk8s.io/docs/addon-hostpath-storage).
 
 ```bash
-sudo apt-get install nfs-kernel-server
-sudo mkdir -p /srv/nfs
-sudo chown nobody:nogroup /srv/nfs
-sudo chmod 0777 /srv/nfs
-sudo systemctl restart nfs-kernel-server
+microk8s enable hostpath-storage
 ```
