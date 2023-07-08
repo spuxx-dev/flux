@@ -26,3 +26,5 @@ spec:
     domain: spuxx.dev
     networkPolicy:
       namespace: ingress
+    global:
+      storageClass: microk8s-hostpath
