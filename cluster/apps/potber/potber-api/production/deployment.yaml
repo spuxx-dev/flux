@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-api-production
-          image: spuxx/potber-api:2.0.0 # {"$imagepolicy": "potber:potber-api-production"}
+          image: spuxx/potber-api:2.0.1 # {"$imagepolicy": "potber:potber-api-production"}
           env:
             - name: APP_PORT
               value: "3000"
