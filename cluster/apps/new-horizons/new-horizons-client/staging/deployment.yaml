@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: new-horizons-client-staging
-          image: spuxx/new-horizons-client:main-20230708-093936-b0e3c1b6a4dfac0495c9da71c9afa985d2d46ea8 # {"$imagepolicy": "new-horizons:new-horizons-client-staging"}
+          image: spuxx/new-horizons-client:main-20230906-121459-6e3244e219fe7bf3e8002b821c760f3b6426ae3f # {"$imagepolicy": "new-horizons:new-horizons-client-staging"}
           ports:
             - containerPort: 8080
           securityContext:
