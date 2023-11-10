@@ -11,8 +11,13 @@ spec:
         - "*.spuxx.dev"
       secretName: spuxx.dev
   rules:
-  - host: dsa.spuxx.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
+    - host: dsa.spuxx.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dummy-service
+                port:
+                  number: 80
