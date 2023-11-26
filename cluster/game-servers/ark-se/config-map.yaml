@@ -6,7 +6,7 @@ metadata:
 data:
   SESSION_NAME: ark-se.spuxx.dev
   MAP: valguero
-  MAX_PLAYERS: 10
-  RCON_ENABLED: False
-  NO_BATTLEYE: true
-  FORCE_ALLOW_CAVE_FLYERS: true
+  MAX_PLAYERS: "10"
+  RCON_ENABLED: "false"
+  NO_BATTLEYE: "true"
+  FORCE_ALLOW_CAVE_FLYERS: "true"
