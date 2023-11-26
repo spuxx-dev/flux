@@ -22,7 +22,7 @@ spec:
             - containerPort: 8080
           volumeMounts:
             - name: ark-se
-              mountPath: "/ark-se"
+              mountPath: /ark-se
           envFrom:
             - configMapRef:
                 name: ark-se
@@ -30,5 +30,5 @@ spec:
             #     name: ark-se
       volumes:
         - name: ark-se
-          persistentVolumeClaim:
-            claimName: ark-se
+          hostPath:
+            path: /opt/kube
