@@ -25,5 +25,5 @@ spec:
           envFrom:
             - configMapRef:
                 name: ark-se
-            - secretRef:
-                name: ark-se
+            # - secretRef:
+            #     name: ark-se
