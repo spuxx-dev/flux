@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ark-se
+  namespace: game-servers
+data:
+  SESSION_NAME: ark.spuxx.dev
+  MAP: valguero
+  MAX_PLAYERS: 10
+  RCON_ENABLED: False
+  NO_BATTLEYE: true
+  FORCE_ALLOW_CAVE_FLYERS: true

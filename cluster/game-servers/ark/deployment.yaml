@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ark-se
+  namespace: game-servers
+  labels:
+    app: ark-se
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ark-se
+  template:
+    metadata:
+      labels:
+        app: ark-se
+    spec:
+      containers:
+        - name: ark-se
+          image: spuxx/docker-ark:latest
+          ports:
+            - containerPort: 8080
+          securityContext:
+            runAsNonRoot: true
+          envFrom:
+            - configMapRef:
+                name: ark-se
+            - secretRef:
+                name: ark-se
