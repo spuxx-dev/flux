@@ -5,9 +5,5 @@ metadata:
   name: ark-se
   namespace: game-servers
 spec:
-  storageClassName: host-storage
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 30Gi
+  storageClassName: ""
+  volumeName: ark-se
