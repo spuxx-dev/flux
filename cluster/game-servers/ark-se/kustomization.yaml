@@ -5,5 +5,4 @@ kind: Kustomization
 resources:
   - persistent-volume-claim.yaml
   - config-map.yaml
-  - secret.yaml
   - deployment.yaml
