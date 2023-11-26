@@ -18,11 +18,25 @@ flux bootstrap github \
 
 When prompted, enter the PAT that Flux can use to access this repository.
 
-Flux requires the GPG key for decrypting secrets. Put the key into a text file and add it to Kubernetes like so:
+For everything to work, secret decryption must also be enabled. First, add the `flux-secrets` repository:
 
 ```bash
-gpg --export-secret-keys --armor <key_id> | kubectl create secret generic sops-gpg --namespace=flux-system --from-file=sops.asc=/dev/stdin
+flux create source git flux-secrets \
+--url=https://github.com/spuxx1701/flux-secrets \
+--branch=main
 ```
+
+Then, add the corresponding customization:
+
+````bash
+flux create kustomization flux-secrets \
+--source=flux-secrets \
+--path=./cluster \
+--prune=true \
+--interval=10m \
+--decryption-provider=sops \
+--decryption-secret=sops-age```
+
 
 ## Setting up persistent storage
 
@@ -32,7 +46,7 @@ Microk8s offers an addon to easily implement persistent storage via a directory 
 
 ```bash
 microk8s enable hostpath-storage
-```
+````
 
 ## Managing secrets
 
