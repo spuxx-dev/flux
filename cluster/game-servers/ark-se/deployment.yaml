@@ -20,8 +20,6 @@ spec:
           image: spuxx/docker-ark:latest
           ports:
             - containerPort: 8080
-          securityContext:
-            runAsUser: ips-hosting
           volumeMounts:
             - name: ark-se
               mountPath: "/ark-se"
