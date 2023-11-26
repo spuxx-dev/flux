@@ -18,25 +18,15 @@ flux bootstrap github \
 
 When prompted, enter the PAT that Flux can use to access this repository.
 
-For everything to work, secret decryption must also be enabled. First, add the `flux-secrets` repository:
+For everything to work, secret decryption must also be enabled. Download the age keyfile and then do:
 
 ```bash
-flux create source git flux-secrets \
---url=https://github.com/spuxx1701/flux-secrets \
---branch=main
+cat age.agekey |
+kubectl create secret generic sops-age \
+--namespace=flux-system \
+--from-file=age.agekey=/dev/stdin
+
 ```
-
-Then, add the corresponding customization:
-
-````bash
-flux create kustomization flux-secrets \
---source=flux-secrets \
---path=./cluster \
---prune=true \
---interval=10m \
---decryption-provider=sops \
---decryption-secret=sops-age```
-
 
 ## Setting up persistent storage
 
@@ -46,7 +36,7 @@ Microk8s offers an addon to easily implement persistent storage via a directory 
 
 ```bash
 microk8s enable hostpath-storage
-````
+```
 
 ## Managing secrets
 
