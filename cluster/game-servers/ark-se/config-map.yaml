@@ -4,8 +4,8 @@ metadata:
   name: ark-se
   namespace: game-servers
 data:
-  SESSION_NAME: ark-se.spuxx.dev
-  MAP: valguero
+  SESSION_NAME: "ark-se.spuxx.dev"
+  MAP: "valguero"
   MAX_PLAYERS: "10"
   RCON_ENABLED: "false"
   NO_BATTLEYE: "true"
