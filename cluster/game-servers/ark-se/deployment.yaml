@@ -23,10 +23,14 @@ spec:
           securityContext:
             runAsNonRoot: true
           volumeMounts:
-            - name: xyz
-              mountPath: /ark-se/
+            - name: ark-se
+              mountPath: "/ark-se"
           envFrom:
             - configMapRef:
                 name: ark-se
             # - secretRef:
             #     name: ark-se
+      volumes:
+        - name: ark-se
+          persistentVolumeClaim:
+            claimName: ark-se
