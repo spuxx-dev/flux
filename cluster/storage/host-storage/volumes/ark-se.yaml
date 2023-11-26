@@ -6,7 +6,6 @@ metadata:
     type: local
 spec:
   storageClassName: host-storage
-  type: hostPath
   accessModes:
     - ReadWriteOnce
   claimRef:

@@ -8,4 +8,5 @@ provisioner: microk8s.io/hostpath
 reclaimPolicy: Delete
 parameters:
   pvDir: /opt/kube
+  type: hostPath
 volumeBindingMode: WaitForFirstConsumer
