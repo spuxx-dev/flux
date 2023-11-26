@@ -22,6 +22,9 @@ spec:
             - containerPort: 8080
           securityContext:
             runAsNonRoot: true
+          volumeMounts:
+            - name: xyz
+              mountPath: /ark-se/
           envFrom:
             - configMapRef:
                 name: ark-se
