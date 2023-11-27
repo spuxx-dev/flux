@@ -9,18 +9,18 @@ spec:
     app: ark-se
   type: NodePort
   ports:
-    - name: query
-      protocol: UDP
-      port: 27015
-      targetPort: 27015
-      nodePort: 27015
     - name: game
       protocol: UDP
-      port: 7777
+      port: 30001
       targetPort: 7777
-      nodePort: 7777
+      nodePort: 30001
     - name: raw-socket
       protocol: UDP
-      port: 7778
+      port: 30002
       targetPort: 7778
-      nodePort: 7778
+      nodePort: 30002
+    - name: query
+      protocol: UDP
+      port: 30003
+      targetPort: 27015
+      nodePort: 30003
