@@ -34,11 +34,29 @@ spec:
           securityContext:
             runAsUser: 9001
             runAsGroup: 9001
-          envFrom:
-            - configMapRef:
-                name: ark-se
-            # - secretRef:
-            #     name: ark-se
+          env:
+            - name: SESSION_NAME
+              value: "ark.spuxx.dev"
+            - name: MAP
+              value: "valguero"
+            - name: MAX_PLAYERS
+              value: "10"
+            - name: RCON_ENABLED
+              value: "false"
+            - name: NO_BATTLEYE
+              value: "true"
+            - name: FORCE_ALLOW_CAVE_FLYERS
+              value: "true"
+            - name: SERVER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ark-se
+                  key: SERVER_PASSWORD
+            - name: SERVER_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ark-se
+                  key: SERVER_ADMIN_PASSWORD
       volumes:
         - name: ark-se
           hostPath:
