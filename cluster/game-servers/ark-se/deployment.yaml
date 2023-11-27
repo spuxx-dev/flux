@@ -38,7 +38,7 @@ spec:
             - name: SESSION_NAME
               value: "ark.spuxx.dev"
             - name: MAP
-              value: "valguero"
+              value: "Valguero_P"
             - name: MAX_PLAYERS
               value: "10"
             - name: RCON_ENABLED
