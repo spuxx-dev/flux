@@ -42,4 +42,4 @@ spec:
       volumes:
         - name: ark-se
           hostPath:
-            path: /mnt/kube/ark-se
+            path: /home/kube/ark-se

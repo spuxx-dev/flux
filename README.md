@@ -38,6 +38,14 @@ Microk8s offers an addon to easily implement persistent storage via a directory 
 microk8s enable hostpath-storage
 ```
 
+We usually use UID 9999 for container runtimes. The host system should have a user called `kube` with that UID:
+
+```bash
+sudo useradd -m -d /home/kube -u 9999 kube
+```
+
+Volumes can than be mounted to /home/kube to have volumes nicely separated from the rest of the host system.
+
 ## Managing secrets
 
 Guide: https://fluxcd.io/flux/guides/mozilla-sops/
