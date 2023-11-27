@@ -12,15 +12,15 @@ spec:
     - name: game
       protocol: UDP
       port: 30001
-      targetPort: 7777
+      targetPort: 30001
       nodePort: 30001
     - name: raw-socket
       protocol: UDP
       port: 30002
-      targetPort: 7778
+      targetPort: 30002
       nodePort: 30002
     - name: query
       protocol: UDP
       port: 30003
-      targetPort: 27015
+      targetPort: 30003
       nodePort: 30003

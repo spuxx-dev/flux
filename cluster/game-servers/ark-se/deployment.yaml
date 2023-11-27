@@ -21,13 +21,13 @@ spec:
           ports:
             - name: query
               protocol: UDP
-              containerPort: 27015
+              containerPort: 30003
             - name: game
               protocol: UDP
-              containerPort: 7777
+              containerPort: 30001
             - name: raw-socket
               protocol: UDP
-              containerPort: 7778
+              containerPort: 30002
           volumeMounts:
             - name: ark-se
               mountPath: /home/ips-hosting
