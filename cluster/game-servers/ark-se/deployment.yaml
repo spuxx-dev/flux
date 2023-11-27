@@ -30,7 +30,7 @@ spec:
               containerPort: 7778
           volumeMounts:
             - name: ark-se
-              mountPath: /ark-se
+              mountPath: /home/ips-hosting
           envFrom:
             - configMapRef:
                 name: ark-se
@@ -39,4 +39,4 @@ spec:
       volumes:
         - name: ark-se
           hostPath:
-            path: /mnt/kube
+            path: /mnt/kube/ark-se
