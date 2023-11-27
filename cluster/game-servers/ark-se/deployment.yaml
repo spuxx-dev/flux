@@ -19,7 +19,15 @@ spec:
         - name: ark-se
           image: spuxx/docker-ark:latest
           ports:
-            - containerPort: 8080
+            - name: query
+              protocol: UDP
+              containerPort: 27015
+            - name: game
+              protocol: UDP
+              containerPort: 7777
+            - name: raw-socket
+              protocol: UDP
+              containerPort: 7778
           volumeMounts:
             - name: ark-se
               mountPath: /ark-se
