@@ -22,4 +22,4 @@ spec:
               service:
                 name: ark-se
                 port:
-                  number: 27015
+                  number: 7777
