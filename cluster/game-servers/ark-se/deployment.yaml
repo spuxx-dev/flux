@@ -35,6 +35,12 @@ spec:
             runAsUser: 9001
             runAsGroup: 9001
           env:
+            - name: PUBLIC_IP
+              value: "202.61.202.115"
+            - name: GAME_PORT
+              value: "30001"
+            - name: QUERY_PORT
+              value: "30003"
             - name: SESSION_NAME
               value: "ark.spuxx.dev"
             - name: MAP
