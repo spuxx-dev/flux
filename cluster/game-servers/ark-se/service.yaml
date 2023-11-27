@@ -16,7 +16,7 @@ spec:
       protocol: UDP
       port: 7777
       targetPort: 7777
-    - name: rawSocker
+    - name: raw-socket
       protocol: UDP
       port: 7778
       targetPort: 7778
