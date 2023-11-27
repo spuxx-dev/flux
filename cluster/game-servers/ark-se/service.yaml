@@ -8,12 +8,15 @@ spec:
   selector:
     app: ark-se
   ports:
-    - protocol: UDP # query
+    - name: query
+      protocol: UDP
       port: 27015
       targetPort: 27015
-    - protocol: UDP # game
+    - name: game
+      protocol: UDP
       port: 7777
       targetPort: 7777
-    - protocol: UDP # rawSocket
+    - name: rawSocker
+      protocol: UDP
       port: 7778
       targetPort: 7778
