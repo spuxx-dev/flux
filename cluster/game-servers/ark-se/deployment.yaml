@@ -31,4 +31,4 @@ spec:
       volumes:
         - name: ark-se
           hostPath:
-            path: /opt/kube
+            path: /mnt/kube
