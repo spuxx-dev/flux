@@ -32,8 +32,8 @@ spec:
             - name: ark-se
               mountPath: /home/ips-hosting
           securityContext:
-            runAsUser: 1000
-            runAsGroup: 1000
+            runAsUser: 9001
+            runAsGroup: 9001
           envFrom:
             - configMapRef:
                 name: ark-se
