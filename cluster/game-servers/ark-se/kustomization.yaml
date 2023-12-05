@@ -1,9 +1,0 @@
----
-# Docs: https://github.com/spuxx1701/docker-ark
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - config-map.yaml
-  - deployment.yaml
-  - service.yaml
-  # - ingress.yaml
