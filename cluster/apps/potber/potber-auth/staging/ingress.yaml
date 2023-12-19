@@ -13,7 +13,7 @@ spec:
         - "*.potber.de"
       secretName: potber.de
   rules:
-    - host: auth-test.potber.de
+    - host: test-auth.potber.de
       http:
         paths:
           - path: /
