@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: potber-auth-production
+  name: potber-auth-staging
   namespace: potber
   labels:
-    app: potber-auth-production
+    app: potber-auth-staging
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: potber-auth-production
+      app: potber-auth-staging
   template:
     metadata:
       labels:
-        app: potber-auth-production
+        app: potber-auth-staging
     spec:
       containers:
-        - name: potber-auth-production
-          image: spuxx/potber-auth:1.0.0 # {"$imagepolicy": "potber:potber-auth-production"}
+        - name: potber-auth-staging
+          image: spuxx/potber-api:main # {"$imagepolicy": "potber:potber-auth-staging"}
           env:
             - name: API_URL
-              value: https://api.potber.de
+              value: https://api-test.potber.de
             - name: API_LOGIN_ENDPOINT
               value: /auth/login
             - name: API_SESSION_ENDPOINT

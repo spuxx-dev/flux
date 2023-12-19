@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: potber-auth-staging
+  namespace: potber
+spec:
+  selector:
+    app: potber-auth-staging
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
