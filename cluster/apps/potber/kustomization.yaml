@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - potber-client
   - potber-api
+  - potber-auth
   - namespace.yaml
   - certificate.yaml
