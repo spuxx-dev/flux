@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: potber-auth-production
+  namespace: potber
+  labels:
+    app: potber-auth-production
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: potber-auth-production
+  template:
+    metadata:
+      labels:
+        app: potber-auth-production
+    spec:
+      containers:
+        - name: potber-auth-production
+          image: spuxx/potber-auth:1.0.0 # {"$imagepolicy": "potber:potber-auth-production"}
+          ports:
+            - containerPort: 3000
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
