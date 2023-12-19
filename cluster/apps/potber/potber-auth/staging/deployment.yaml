@@ -20,7 +20,7 @@ spec:
           image: spuxx/potber-auth:main-20231219-190030-28cc2bcf69b9d8a10d857f64d772d79d87bb0d16 # {"$imagepolicy": "potber:potber-auth-staging"}
           env:
             - name: VITE_API_URL
-              value: https://api-test.potber.de
+              value: https://test-api.potber.de
             - name: VITE_API_LOGIN_ENDPOINT
               value: /auth/login
             - name: VITE_API_SESSION_ENDPOINT
