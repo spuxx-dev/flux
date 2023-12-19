@@ -6,7 +6,7 @@ metadata:
   labels:
     app: potber-auth-staging
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: potber-auth-staging
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-auth-staging
-          image: spuxx/potber-api:main # {"$imagepolicy": "potber:potber-auth-staging"}
+          image: spuxx/potber-auth:main # {"$imagepolicy": "potber:potber-auth-staging"}
           env:
             - name: API_URL
               value: https://api-test.potber.de
