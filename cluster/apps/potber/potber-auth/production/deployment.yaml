@@ -19,11 +19,11 @@ spec:
         - name: potber-auth-production
           image: spuxx/potber-auth:1.0.0 # {"$imagepolicy": "potber:potber-auth-production"}
           env:
-            - name: API_URL
+            - name: VITE_API_URL
               value: https://api.potber.de
-            - name: API_LOGIN_ENDPOINT
+            - name: VITE_API_LOGIN_ENDPOINT
               value: /auth/login
-            - name: API_SESSION_ENDPOINT
+            - name: VITE_API_SESSION_ENDPOINT
               value: /auth/session
           ports:
             - containerPort: 3000
