@@ -9,4 +9,4 @@ spec:
     name: potber-auth
   policy:
     semver:
-      range: "^1x-0"
+      range: "^1.x-0"
