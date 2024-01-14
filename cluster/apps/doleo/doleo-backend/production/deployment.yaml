@@ -48,7 +48,7 @@ spec:
                   key: AUTH_JWT_SECRET
             - name: VAPID_PUBLIC_KEY
               value: BKK7bl54Trjsx1JE3uvAWs78ADQMKTXxRDMS8nvDt6A1KgEFPUuRG6pUkT53hUrkwYDdgJE2OprRuLW4rG-qfy0
-            - name: VAPID_PRIVATE_KEY:
+            - name: VAPID_PRIVATE_KEY
               valueFrom:
                 secretKeyRef:
                   name: doleo-backend-staging
