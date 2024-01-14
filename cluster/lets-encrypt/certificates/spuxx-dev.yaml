@@ -28,9 +28,9 @@ spec:
       # across namespaces.
       # See https://cert-manager.io/docs/tutorials/syncing-secrets-across-namespaces/#using-reflector
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
-      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "kube-system,spuxx-dev,monitoring"
+      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "kube-system,observability,spuxx-dev"
       reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
-      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,spuxx-dev,monitoring"
+      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,observability,spuxx-dev"
   commonName: "*.spuxx.dev"
   dnsNames:
     - "spuxx.dev"
