@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: doleo-backend-staging
-          image: spuxx/doleo-2-backend:main-20240114-184106-5e32a8ca2358f9e4a64d0e1414f9bb20fdd8d7fb # {"$imagepolicy": "doleo:doleo-backend-staging"}
+          image: spuxx/doleo-2-backend:main-20240114-195911-119eb814c0b235aa0623a86ab6d57385f7298910 # {"$imagepolicy": "doleo:doleo-backend-staging"}
           env:
             - name: APP_CLIENT_URL
               value: https://test.doleo-2.de
