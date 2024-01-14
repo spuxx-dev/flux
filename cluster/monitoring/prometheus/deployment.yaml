@@ -20,6 +20,8 @@ spec:
           image: prom/prometheus:latest
           ports:
             - containerPort: 9090
+          securityContext:
+            runAsUser: 9002
           volumeMounts:
             - name: monitoring
               mountPath: /etc/prometheus
