@@ -22,7 +22,7 @@ spec:
           ports:
             - containerPort: 3306
           securityContext:
-            runAsUser: 9999
+            runAsUser: 9001 # mariadb user
           volumeMounts:
             - name: mariadb
               mountPath: /var/lib/mysql
@@ -35,4 +35,4 @@ spec:
       volumes:
         - name: mariadb
           hostPath:
-            path: /home/kube/mariadb
+            path: /home/mariadb
