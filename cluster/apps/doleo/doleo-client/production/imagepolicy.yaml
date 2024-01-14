@@ -1,0 +1,12 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: doleo-client-production
+  namespace: doleo
+spec:
+  imageRepositoryRef:
+    name: doleo-client
+  policy:
+    semver:
+      range: "^1.x-0"
