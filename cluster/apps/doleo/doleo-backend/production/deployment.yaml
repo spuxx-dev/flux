@@ -35,7 +35,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: doleo-backend-production
-                  key: DATABASE_PASSWORD
+                  key: DATABASE_USER
             - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
