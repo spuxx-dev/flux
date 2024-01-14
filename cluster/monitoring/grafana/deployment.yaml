@@ -16,6 +16,7 @@ spec:
         app: grafana
     spec:
       securityContext:
+        runAsUser: 9002 # monitoring user
         fsGroup: 472
         supplementalGroups:
           - 0
@@ -56,5 +57,3 @@ spec:
         - name: monitoring
           hostPath:
             path: /home/monitoring/grafana
-          persistentVolumeClaim:
-            claimName: grafana
