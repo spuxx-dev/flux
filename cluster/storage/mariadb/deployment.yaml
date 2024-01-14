@@ -35,4 +35,4 @@ spec:
       volumes:
         - name: mariadb
           hostPath:
-            path: /var/lib/mysql
+            path: /home/kube/mariadb
