@@ -6,6 +6,22 @@ metadata:
   labels:
     app: prometheus
 spec:
+  # Mounts the prometheus configmap to the containerl, copies the config to the
+  # /etc/prometheus directory and changes the owner to the prometheus user
+  initContainers:
+    - name: copy-config
+      image: busybox
+      command:
+        [
+          "sh",
+          "-c",
+          "cp /config/prometheus.yml /etc/prometheus/prometheus.yml && chown 9002:9002 /etc/prometheus/prometheus.yml",
+        ]
+      volumeMounts:
+        - name: prometheus-config
+          mountPath: /config
+        - name: monitoring
+          mountPath: /etc/prometheus
   replicas: 1
   selector:
     matchLabels:
@@ -25,9 +41,6 @@ spec:
           volumeMounts:
             - name: monitoring
               mountPath: /etc/prometheus
-            - name: prometheus-config
-              mountPath: /etc/prometheus
-              subPath: prometheus.yml
       volumes:
         - name: monitoring
           hostPath:
