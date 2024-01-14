@@ -27,6 +27,7 @@ spec:
             - name: mariadb
               mountPath: /var/lib/mysql
             - name: mariadb-config
+              mountPath: /etc/mysql/conf.d
           env:
             - name: MARIADB_ROOT_PASSWORD
               valueFrom:
