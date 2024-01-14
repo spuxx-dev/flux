@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doleo-client-staging
+  namespace: doleo
+  labels:
+    app: doleo-client-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doleo-client-staging
+  template:
+    metadata:
+      labels:
+        app: doleo-client-staging
+    spec:
+      containers:
+        - name: doleo-client-staging
+          image: spuxx/doleo-2-client # {"$imagepolicy": "doleo:doleo-client-staging"}
+          ports:
+            - containerPort: 8080
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
