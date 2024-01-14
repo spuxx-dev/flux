@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb
+  namespace: storage
+  labels:
+    app: mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+        - name: adminer
+          image: mariadb:lts
+          ports:
+            - containerPort: 3306
+          securityContext:
+            runAsUser: 9999
+          volumeMounts:
+            - name: mariadb
+              mountPath: /var/lib/mysql
+          env:
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mariadb
+                  key: MARIADB_ROOT_PASSWORD
+      volumes:
+        - name: mariadb
+          hostPath:
+            path: /var/lib/mysql
