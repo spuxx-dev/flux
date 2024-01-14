@@ -38,10 +38,9 @@ Microk8s offers an addon to easily implement persistent storage via a directory 
 microk8s enable hostpath-storage
 ```
 
-We usually use UID 9999 for container runtimes. The host system should have a user called `kube` with that UID:
+We usually use UID `9999` for container runtimes that do not require access to storage on the host. For containers that do, we create new users that have their own home folders. The following users are reserved by existing applications:
 
 ```bash
-sudo useradd -m -d /home/kube -u 9999 kube
+9001 - mariadb
+9002 - monitoring
 ```
-
-Volumes can than be mounted to /home/kube to have volumes nicely separated from the rest of the host system.
