@@ -25,4 +25,4 @@ spec:
             runAsUser: 9999
           env:
             - name: ADMINER_DEFAULT_SERVER
-              value: storage.mariadb
+              value: mariadb.storage.svc.cluster.local
