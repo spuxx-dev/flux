@@ -6,5 +6,5 @@ metadata:
   namespace: storage
 data:
   custom.cnf: |
-    [mysqld]
+    [mariadb]
     bind-address = 0.0.0.0
