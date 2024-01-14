@@ -7,7 +7,9 @@ metadata:
     type: local
 spec:
   storageClassName: host-storage
-  type: hostPath
+  hostPath:
+    path: /home/mariadb
+    type: DirectoryOrCreate
   accessModes:
     - ReadWriteOnce
   claimRef:
