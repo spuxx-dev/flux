@@ -28,6 +28,14 @@ kubectl create secret generic sops-age \
 
 ```
 
+## Setting up observability
+
+You can enable the observability stack (grafana, prometheus, loki etc.) via:
+
+```bash
+microk8s enable observability
+```
+
 ## Setting up persistent storage
 
 ### Option 1: Hostpath storage
