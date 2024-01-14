@@ -53,6 +53,7 @@ spec:
               name: monitoring
       volumes:
         - name: monitoring
-          hostPath: /home/monitoring/grafana
+          hostPath:
+            path: /home/monitoring/grafana
           persistentVolumeClaim:
             claimName: grafana
