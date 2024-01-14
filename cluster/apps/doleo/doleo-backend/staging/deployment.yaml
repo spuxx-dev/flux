@@ -29,6 +29,8 @@ spec:
               value: "3306"
             - name: DATABASE_DB
               value: doleo-staging
+            - name: DATABASE_SYNCHRONIZE
+              value: "true"
             - name: DATABASE_USER
               valueFrom:
                 secretKeyRef:
