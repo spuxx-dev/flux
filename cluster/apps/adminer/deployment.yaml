@@ -24,4 +24,5 @@ spec:
           securityContext:
             runAsNonRoot: true
           env:
-            ADMINER_DEFAULT_SERVER: storage.mariadb
+            - name: ADMINER_DEFAULT_SERVER
+              value: storage.mariadb
