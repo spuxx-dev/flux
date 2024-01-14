@@ -26,8 +26,7 @@ spec:
             - name: monitoring
               mountPath: /etc/prometheus
             - name: prometheus-config
-              mountPath: /etc/prometheus/prometheus.yml
-              subPath: prometheus.yml
+              mountPath: /etc/prometheus
       volumes:
         - name: monitoring
           hostPath:
