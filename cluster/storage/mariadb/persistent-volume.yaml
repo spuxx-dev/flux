@@ -7,6 +7,7 @@ metadata:
     type: local
 spec:
   storageClassName: host-storage
+  persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /home/mariadb
     type: DirectoryOrCreate
