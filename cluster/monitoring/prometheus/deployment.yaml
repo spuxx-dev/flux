@@ -12,11 +12,7 @@ spec:
     - name: copy-config
       image: busybox
       command:
-        [
-          "sh",
-          "-c",
-          "cp /config/prometheus.yml /etc/prometheus/prometheus.yml && chown 9002:9002 /etc/prometheus/prometheus.yml",
-        ]
+        ["sh", "-c", "cp /config/prometheus.yml /etc/prometheus/prometheus.yml"]
       volumeMounts:
         - name: prometheus-config
           mountPath: /config
@@ -36,8 +32,6 @@ spec:
           image: prom/prometheus:latest
           ports:
             - containerPort: 9090
-          securityContext:
-            runAsUser: 9002
           volumeMounts:
             - name: monitoring
               mountPath: /etc/prometheus
