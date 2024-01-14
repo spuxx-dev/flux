@@ -26,6 +26,7 @@ spec:
           volumeMounts:
             - name: mariadb
               mountPath: /var/lib/mysql
+            - name: mariadb-config
           env:
             - name: MARIADB_ROOT_PASSWORD
               valueFrom:
@@ -36,3 +37,6 @@ spec:
         - name: mariadb
           hostPath:
             path: /home/mariadb
+        - name: mariadb-config
+          configMap:
+            name: mariadb
