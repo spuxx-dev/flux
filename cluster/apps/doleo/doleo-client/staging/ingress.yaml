@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "*.doleo.de"
-      secretName: doleo.de
+        - "*.doleo-2.de"
+      secretName: doleo-2.de
   rules:
-    - host: test.doleo.de
+    - host: test.doleo-2.de
       http:
         paths:
           - path: /
