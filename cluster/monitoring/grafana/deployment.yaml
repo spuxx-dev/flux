@@ -17,9 +17,6 @@ spec:
     spec:
       securityContext:
         runAsUser: 9002 # monitoring user
-        fsGroup: 472
-        supplementalGroups:
-          - 0
       containers:
         - name: grafana
           image: grafana/grafana:latest
