@@ -13,7 +13,7 @@ spec:
         - "*.doleo-2.de"
       secretName: doleo-2.de
   rules:
-    - host: api.doleo.de
+    - host: api.doleo-2.de
       http:
         paths:
           - path: /
