@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: doleo-client-staging
-          image: spuxx/doleo-2-client:main-20240114-162315-e37c6ef018a1fca4634ab2dc3a1069ce1ac50f6e # {"$imagepolicy": "doleo:doleo-client-staging"}
+          image: spuxx/doleo-2-client:main-20240114-170206-66367b71ae3ee236dda14b3b47a4110d61f5e7c3 # {"$imagepolicy": "doleo:doleo-client-staging"}
           ports:
             - containerPort: 8080
           securityContext:
