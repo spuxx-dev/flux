@@ -2,7 +2,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mariadb
+  name: mariadb-config
+  namespace: storage
 data:
   custom.cnf: |
     [mysqld]

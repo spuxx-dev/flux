@@ -40,4 +40,4 @@ spec:
             path: /home/mariadb
         - name: mariadb-config
           configMap:
-            name: mariadb
+            name: mariadb-config
