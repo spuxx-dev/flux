@@ -7,9 +7,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/server-snippet: |-
-      location /metrics
-        deny all;
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($request_uri ~* "/metrics") {
+        return 403;
+      }
 spec:
   tls:
     - hosts:
