@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: potber-api-production
+  namespace: observability
+  labels:
+    app: potber-api-production
+    # This label is used to ensure the observability addon picks up this ServiceMonitor
+    release: kube-prom-stack
+spec:
+  selector:
+    matchLabels:
+      app: potber-api-production
+  namespaceSelector:
+    matchNames:
+      - potber
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s

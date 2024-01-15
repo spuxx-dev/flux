@@ -22,4 +22,4 @@ spec:
               service:
                 name: potber-api-production
                 port:
-                  number: 3000
+                  name: http

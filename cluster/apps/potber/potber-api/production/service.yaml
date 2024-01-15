@@ -4,10 +4,18 @@ kind: Service
 metadata:
   name: potber-api-production
   namespace: potber
+  labels:
+    # Used by the ServiceMonitor
+    app: potber-api-staging
 spec:
   selector:
     app: potber-api-production
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 3000
       targetPort: 3000
+    - name: metrics
+      protocol: TCP
+      port: 9100
+      targetPort: 9100
