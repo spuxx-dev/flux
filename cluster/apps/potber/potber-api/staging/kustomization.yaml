@@ -7,4 +7,3 @@ resources:
   - imageupdateautomation.yaml
   - ingress.yaml
   - service.yaml
-  - servicemonitor.yaml
