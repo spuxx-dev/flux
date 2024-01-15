@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: potber-api-staging
+  namespace: potber
+  labels:
+    app: potber-api-staging
+spec:
+  selector:
+    matchLabels:
+      app: potber-api-staging
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
