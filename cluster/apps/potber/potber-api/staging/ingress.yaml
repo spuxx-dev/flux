@@ -23,7 +23,7 @@ spec:
               service:
                 name: non-existant-service
                 port:
-                  name: 80
+                  number: 80
           - path: /
             pathType: Prefix
             backend:
