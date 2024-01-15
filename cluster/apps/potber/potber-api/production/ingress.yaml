@@ -16,6 +16,14 @@ spec:
     - host: api.potber.de
       http:
         paths:
+          # This blocks access to the metrics endpoint from outside the cluster
+          - path: /metrics
+            pathType: Prefix
+            backend:
+              service:
+                name: non-existant-service
+                port:
+                  number: 80
           - path: /
             pathType: Prefix
             backend:
