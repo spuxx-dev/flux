@@ -4,6 +4,7 @@ kind: Service
 metadata:
   name: potber-api-staging
   namespace: potber
+  app: potber-api-staging
 spec:
   selector:
     app: potber-api-staging
