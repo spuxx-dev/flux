@@ -7,8 +7,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      rewrite ^/metrics$ /nonexistent break;
 spec:
   tls:
     - hosts:
@@ -18,6 +16,14 @@ spec:
     - host: test-api.potber.de
       http:
         paths:
+          # This blocks access to the metrics endpoint from outside the cluster
+          - path: /metrics
+            pathType: Prefix
+            backend:
+              service:
+                name: non-existant-service
+                port:
+                  name: 80
           - path: /
             pathType: Prefix
             backend:
