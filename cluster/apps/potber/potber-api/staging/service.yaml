@@ -5,8 +5,7 @@ metadata:
   name: potber-api-staging
   namespace: potber
   labels:
-    # Used by the ServiceMonitor
-    app: potber-api-staging
+    monitoringGroup: potber-api
 spec:
   selector:
     app: potber-api-staging
