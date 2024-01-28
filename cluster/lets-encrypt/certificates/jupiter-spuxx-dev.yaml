@@ -2,10 +2,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: jupiter.leopoldhock.de
+  name: jupiter.spuxx.dev
   namespace: lets-encrypt
 spec:
-  secretName: jupiter.leopoldhock.de
+  secretName: jupiter.spuxx.dev
   duration: 2160h # 90d
   renewBefore: "528h" # renew 22 days before to avoid LE email warning
   isCA: false
@@ -31,7 +31,7 @@ spec:
       reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "kube-system"
       reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
       reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system"
-  commonName: "*.jupiter.leopoldhock.de"
+  commonName: "*.jupiter.spuxx.dev"
   dnsNames:
-    - "jupiter.leopoldhock.de"
-    - "*.jupiter.leopoldhock.de"
+    - "jupiter.spuxx.dev"
+    - "*.jupiter.spuxx.dev"
