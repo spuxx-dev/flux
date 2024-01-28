@@ -6,8 +6,8 @@ metadata:
 data:
   injected-config.js: |
     window.APP = {
-      HOSTNAME: 'potber.de',
-      API_URL: 'https://foo.potber.de',
-      AUTH_ISSUER_URL: 'https://auth.potber.de',
-      MEME_HOST_URL: 'https://auth.potber.de',
+      HOSTNAME: 'test.potber.de',
+      API_URL: 'https://test-api.potber.de',
+      AUTH_ISSUER_URL: 'https://test-auth.potber.de',
+      MEME_HOST_URL: 'https://test.potber.de',
     };
