@@ -26,3 +26,10 @@ spec:
             httpGet:
               path: /healthz
               port: 8080
+          volumeMounts:
+            - name: config
+              mountPath: /usr/share/nginx/html/config
+      volumes:
+        - name: config
+          configMap:
+            name: potber-client-staging
