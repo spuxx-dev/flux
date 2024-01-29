@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-client-production
-          # image: spuxx/potber-client:1.18.0 # {"$imagepolicy": "potber:potber-client-production"}
-          image: spuxx/potber-client:1.17.5
+          image: spuxx/potber-client:1.17.5 # {"$imagepolicy": "potber:potber-client-production"}
           ports:
             - containerPort: 8080
           securityContext:
@@ -27,3 +26,10 @@ spec:
             httpGet:
               path: /healthz
               port: 8080
+          volumeMounts:
+            - name: config
+              mountPath: /usr/share/nginx/html/config
+      volumes:
+        - name: config
+          configMap:
+            name: potber-client-production
