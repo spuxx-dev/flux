@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "podcast.spuxx.dev"
+        - "abs.spuxx.dev"
       secretName: spuxx.dev
   rules:
-    - host: podcast.spuxx.dev
+    - host: abs.spuxx.dev
       http:
         paths:
           - path: /
