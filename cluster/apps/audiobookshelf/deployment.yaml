@@ -20,7 +20,7 @@ spec:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:latest
           ports:
-            - containerPort: 13378
+            - containerPort: 80
           securityContext:
             runAsUser: 9003
           env:
