@@ -20,12 +20,14 @@ spec:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           securityContext:
             runAsUser: 9003
           env:
             - name: TZ
               value: Europe/Berlin
+            - name: PORT
+              value: "8080"
           volumeMounts:
             - name: audiobooks
               mountPath: /audiobooks
