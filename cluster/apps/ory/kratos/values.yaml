@@ -4,7 +4,7 @@ service:
     enabled: false
   public:
     enabled: false
-  ingress:
+ingress:
   admin:
     enabled: false
   public:
@@ -14,7 +14,7 @@ kratos:
     enabled: true
     type: initContainer
   serviceAccount:
-    create: false 
+    create: false
 autoscaling:
   enabled: false
 courier:
