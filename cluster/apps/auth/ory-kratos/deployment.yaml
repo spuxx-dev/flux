@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ory-kratos
+  namespace: spuxx-dev
+  labels:
+    app: ory-kratos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ory-kratos
+  template:
+    metadata:
+      labels:
+        app: ory-kratos
+    spec:
+      containers:
+        - name: ory-kratos
+          image: ory-kratos:v1.1.0-distroless
+          ports: deploymen
+            - name: public
+              containerPort: 4433
+            - name: admin
+              containerPort: 4434
+          securityContext:
+            runAsUser: 9005
+          env:
+            - name: DNS
+              valueFrom:
+                secretKeyRef:
+                  name: ory-kratos
+                  key: DNS
+          envFrom:
+            - configMapRef:
+                name: ory-kratos
