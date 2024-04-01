@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: ory-kratos
-          image: ory-kratos:v1.1.0
+          image: oryd/kratos:v1.1.0-distroless
           ports:
             - name: public
               containerPort: 4433
