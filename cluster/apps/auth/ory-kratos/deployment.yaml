@@ -27,11 +27,11 @@ spec:
           securityContext:
             runAsUser: 9999
           env:
-            - name: DNS
+            - name: DSN
               valueFrom:
                 secretKeyRef:
                   name: ory-kratos
-                  key: DNS
+                  key: DSN
           envFrom:
             - configMapRef:
                 name: ory-kratos
