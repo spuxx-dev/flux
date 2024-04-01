@@ -19,13 +19,13 @@ spec:
       containers:
         - name: ory-kratos
           image: ory-kratos:v1.1.0-distroless
-          ports: deploymen
+          ports:
             - name: public
               containerPort: 4433
             - name: admin
               containerPort: 4434
           securityContext:
-            runAsUser: 9005
+            runAsUser: 9999
           env:
             - name: DNS
               valueFrom:
