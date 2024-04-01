@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ory-kratos
-  namespace: spuxx-dev
+  namespace: ory
 data:
   SESSION_COOKIE_NAME: spuxx-session
   SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: "https://spuxx.dev"

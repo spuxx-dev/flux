@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ory-kratos
-  namespace: spuxx-dev
+  namespace: ory
   labels:
     app: ory-kratos
 spec:
