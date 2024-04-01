@@ -6,7 +6,7 @@ metadata:
   namespace: ory
 spec:
   interval: 60m0s
-  chart: ory-kratos
+  chart: kratos
   reconcileStrategy: ChartVersion
   sourceRef:
     kind: HelmRepository
