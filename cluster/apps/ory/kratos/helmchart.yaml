@@ -5,10 +5,12 @@ metadata:
   name: ory-kratos
   namespace: ory
 spec:
-  interval: 5m0s
+  interval: 60m0s
   chart: ory-kratos
   reconcileStrategy: ChartVersion
   sourceRef:
     kind: HelmRepository
     name: ory-kratos
   version: "0.40.1"
+  valuesFiles:
+    - values.yaml
