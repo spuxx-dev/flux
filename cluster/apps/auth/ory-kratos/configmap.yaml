@@ -5,4 +5,4 @@ metadata:
   name: ory-kratos
   namespace: spuxx-dev
 data:
-  SESSION_COOKIE_NAME: "spuxx-session"
+  SESSION_COOKIE_NAME: spuxx-session
