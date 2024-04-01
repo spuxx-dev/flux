@@ -6,3 +6,4 @@ metadata:
   namespace: spuxx-dev
 data:
   SESSION_COOKIE_NAME: spuxx-session
+  SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: "https://spuxx.dev"
