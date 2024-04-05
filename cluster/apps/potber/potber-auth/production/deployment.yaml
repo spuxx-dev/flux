@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-auth-production
-          image: spuxx/potber-auth:1.1.0 # {"$imagepolicy": "potber:potber-auth-production"}
+          image: spuxx/potber-auth:1.1.1 # {"$imagepolicy": "potber:potber-auth-production"}
           env:
             - name: VITE_API_URL
               value: https://api.potber.de
