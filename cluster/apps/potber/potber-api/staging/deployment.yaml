@@ -28,7 +28,7 @@ spec:
             - name: SWAGGER_TEST_THREAD_ID
               value: "219289"
             - name: CORS_ALLOWED_ORIGINS
-              value: https://test.potber.de,http://localhost:4200
+              value: https://test.potber.de,http://localhost:4200,http://schleppi.fritz.box:4200
             - name: AUTH_JWT_SECRET
               valueFrom:
                 secretKeyRef:
