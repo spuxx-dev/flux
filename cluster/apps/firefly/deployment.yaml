@@ -26,6 +26,7 @@ spec:
             allowPrivilegeEscalation: true
             capabilities:
               add:
+                - CHOWN
                 - CHMOD
           volumeMounts:
             - name: uploads
