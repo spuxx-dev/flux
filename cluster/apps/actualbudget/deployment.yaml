@@ -28,7 +28,7 @@ spec:
               mountPath: /data
           env:
             - name: ACTUAL_PORT
-              value: 8080
+              value: "8080"
       volumes:
         - name: data
           hostPath:
