@@ -16,13 +16,6 @@ spec:
       labels:
         app: firefly
     spec:
-      initContainers:
-        - name: volume-permissions
-          image: busybox
-          command: ["sh", "-c", "chown -R 9004:9004 /var/www/html/storage"]
-          volumeMounts:
-            - name: uploads
-              mountPath: /var/www/html/storage
       containers:
         - name: firefly
           image: fireflyiii/core:latest
@@ -32,8 +25,6 @@ spec:
           #   runAsUser: 9004
           #   allowPrivilegeEscalation: true
           #   capabilities:
-          #     drop:
-          #       - ALL
           #     add:
           #       - CHOWN
           volumeMounts:
