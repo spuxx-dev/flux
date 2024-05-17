@@ -21,13 +21,13 @@ spec:
           image: fireflyiii/core:latest
           ports:
             - containerPort: 8080
-          securityContext:
-            runAsUser: 9004
-            allowPrivilegeEscalation: true
-            capabilities:
-              add:
-                - CHOWN
-                - CHMOD
+          # securityContext:
+          #   runAsUser: 9004
+          #   allowPrivilegeEscalation: true
+          #   capabilities:
+          #     add:
+          #       - CHOWN
+          #       - CHMOD
           volumeMounts:
             - name: uploads
               mountPath: /var/www/html/storage/upload
