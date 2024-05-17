@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-api-staging
-          image: spuxx/potber-api:main-20240329-094326-fae31c38a2736ddf96f9207d3ba21b4061ef4086 # {"$imagepolicy": "potber:potber-api-staging"}
+          image: spuxx/potber-api:main-20240428-184728-b33bc46d02832a5b837e8b4dee2c022e7d9dba5e # {"$imagepolicy": "potber:potber-api-staging"}
           env:
             - name: APP_PORT
               value: "3000"
@@ -28,7 +28,7 @@ spec:
             - name: SWAGGER_TEST_THREAD_ID
               value: "219289"
             - name: CORS_ALLOWED_ORIGINS
-              value: https://test.potber.de,http://localhost:4200
+              value: https://test.potber.de,http://localhost:4200,http://schleppi.fritz.box:4200
             - name: AUTH_JWT_SECRET
               valueFrom:
                 secretKeyRef:
