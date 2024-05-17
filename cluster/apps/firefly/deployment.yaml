@@ -29,7 +29,14 @@ spec:
           ports:
             - containerPort: 8080
           securityContext:
+            readOnlyRootFilesystem: true
             runAsUser: 9004
+            allowPrivilegeEscalation: true
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - CHOWN
           volumeMounts:
             - name: uploads
               mountPath: /var/www/html/storage/upload
