@@ -26,7 +26,7 @@ spec:
             allowPrivilegeEscalation: true
             capabilities:
               add:
-                - CHOWN
+                - CHMOD
           volumeMounts:
             - name: uploads
               mountPath: /var/www/html/storage/upload
