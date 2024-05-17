@@ -52,5 +52,5 @@ We usually use UID `9999` for container runtimes that do not require access to s
 9001 - mariadb
 9002 - monitoring
 9003 - audiobookshelf
-9004 - firefly
+9004 - actualbudget
 ```

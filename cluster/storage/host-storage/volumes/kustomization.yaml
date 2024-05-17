@@ -5,4 +5,4 @@ resources:
   - mariadb.yaml
   - monitoring.yaml
   - audiobookshelf.yaml
-  - firefly.yaml
+  - actualbudget.yaml
