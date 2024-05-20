@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "actualbudget.spuxx.dev"
+        - "actual.spuxx.dev"
       secretName: spuxx.dev
   rules:
-    - host: actualbudget.spuxx.dev
+    - host: actual.spuxx.dev
       http:
         paths:
           - path: /
