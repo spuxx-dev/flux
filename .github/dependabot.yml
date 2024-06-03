@@ -1,6 +1,18 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
+    directory: "/cluster/storage/mariadb"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
     directory: "/cluster/apps/actualbudget"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/cluster/apps/adminer"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/cluster/apps/audiobookshelf"
     schedule:
       interval: "daily"
