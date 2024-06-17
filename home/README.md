@@ -11,8 +11,8 @@ sudo apt-get install ufw
 # SSH
 sudo ufw allow 22/tcp
 # HTTP/HTTPS
-sudo ufw allow 80
-sudo ufw allow 443
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
 # Microk8s' API server
 sudo ufw allow 16443/tcp
 # Allow all outgoing traffic
