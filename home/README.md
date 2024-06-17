@@ -42,7 +42,10 @@ Configure `/etc/dnsmasq.conf`:
 
 ```bash
 # /etc/dnsmasq.conf
+# Configure adresses
+address=/router.home/192.168.178.1
 address=/assistant.home/192.168.178.77
+address=/staubi.home/192.168.178.20
 # ...
 # Add upstream DNS servers to handle external domains
 server=1.1.1.1
