@@ -77,6 +77,12 @@ flux bootstrap github \
   --path=./home
 ```
 
+### 5. Set up required users
+
+```bash
+sudo useradd -u 9001 -m -d /home/homeassistant homeassistant
+```
+
 ### 5. Install other tools (optional)
 
 * `brew install k9s`
