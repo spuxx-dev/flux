@@ -38,11 +38,15 @@ Install dnsmasq:
 sudo apt-get install dnsmasq
 ```
 
-Add required addresses to `/etc/dnsmasq.conf`:
+Configure `/etc/dnsmasq.conf`:
 
 ```bash
 # /etc/dnsmasq.conf
 address=/assistant.home/192.168.178.77
+# ...
+# Add upstream DNS servers to handle external domains
+server=1.1.1.1
+server=1.0.0.1
 ```
 
 If required, configure `systemd-resolved` to not stub DNS. This can be checked by checking if `systemd-resolved` listens to port 53: `lsof -i :53`
