@@ -30,7 +30,37 @@ sudo ufw default deny incoming
 sudo ufw enable
 ```
 
-### 2. [Install microk8s](https://microk8s.io/docs/getting-started)
+### 2. Set up local DNS server
+
+Install dnsmasq:
+
+```bash
+sudo apt-get install dnsmasq
+```
+
+Add required addresses to `/etc/dnsmasq.conf`:
+
+```bash
+# /etc/dnsmasq.conf
+address=/assistant.home/192.168.178.77
+```
+
+If required, configure `systemd-resolved` to not stub DNS. This can be checked by checking if `systemd-resolved` listens to port 53: `lsof -i :53`
+
+```bash
+# /etc/systemd/resolved.conf
+DNSStubListener=no
+```
+
+Restart dnsmasq:
+
+```bash
+sudo systemctl restart dnsmasq
+```
+
+Don't forget to configure the DNS server in your router.
+
+### 3. [Install microk8s](https://microk8s.io/docs/getting-started)
 
 ```bash
 sudo snap install microk8s --classic --channel=1.30
@@ -58,7 +88,7 @@ Get the config and copy it to `./kube/config`:
 microk8s config
 ```
 
-### 3. Enable required addons
+### 4. Enable required addons
 
 ```bash
 microk8s enable dns
@@ -66,7 +96,7 @@ microk8s enable ingress
 microk8s enable hostpath-storage
 ```
 
-### 4. Install Flux
+### 5. Install Flux
 
 FluxCD is deployed via the [bootstrap](https://fluxcd.io/flux/cmd/flux_bootstrap/) command:
 
@@ -79,12 +109,12 @@ flux bootstrap github \
   --path=./home
 ```
 
-### 5. Set up required users
+### 6. Set up required users
 
 ```bash
 sudo useradd -u 9001 -m -d /home/homeassistant homeassistant
 ```
 
-### 5. Install other tools (optional)
+### 7. Install other tools (optional)
 
 * `brew install k9s`
