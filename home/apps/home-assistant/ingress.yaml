@@ -6,6 +6,7 @@ metadata:
   namespace: home-assistant
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
   rules:
     - host: home-assistant.hub.fritz.box
       http:
