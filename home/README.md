@@ -19,7 +19,7 @@ sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 # DNSMASQ
-sudo ufw allow 53/tcp
+sudo ufw allow 53
 # Microk8s' API server
 sudo ufw allow 16443/tcp
 # Allow all outgoing traffic
