@@ -4,7 +4,13 @@
 
 The following guide assumes that the system is using an Ubuntu/Debian system and that `snap` is already installed.
 
-### 1. Set up firewall
+### 1. Prepare system
+
+Requirements:
+
+* [homebrew](https://docs.brew.sh/Homebrew-on-Linux)
+
+### 2. Set up firewall
 
 ```bash
 sudo apt-get install ufw
@@ -23,7 +29,7 @@ sudo ufw default deny incoming
 sudo ufw enable
 ```
 
-### 2. [Install microk8s](https://microk8s.io/docs/getting-started)
+### 3. [Install microk8s](https://microk8s.io/docs/getting-started)
 
 ```bash
 sudo snap install microk8s --classic --channel=1.30
@@ -45,7 +51,7 @@ Check status:
 microk8s status --wait-ready
 ```
 
-### 3. Enable required addons
+### 4. Enable required addons
 
 ```bash
 microk8s enable dns
@@ -53,6 +59,19 @@ microk8s enable ingress
 microk8s enable hostpath-storage
 ```
 
-### 5. Install kubectl and k9s (optional)
+### 5. Install Flux
+
+FluxCD is deployed via the [bootstrap](https://fluxcd.io/flux/cmd/flux_bootstrap/) command:
+
+```bash
+flux bootstrap github \
+  --owner=spuxx1701 \
+  --repository=flux \
+  --branch=master \
+  --token-auth \
+  --path=./home
+```
+
+### 6. Install kubectl and k9s (optional)
 
 Start by installing [homebrew](https://docs.brew.sh/Homebrew-on-Linux) since it's the easiest way to get kubectl and k9s.
