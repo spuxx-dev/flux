@@ -8,10 +8,10 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-    - host: home-assistant.hub.fritz.box
+    - host: hub.fritz.box
       http:
         paths:
-          - path: /
+          - path: /home-assistant
             pathType: Prefix
             backend:
               service:
