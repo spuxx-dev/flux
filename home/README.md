@@ -7,6 +7,7 @@ The following guide assumes that the system is using an Ubuntu/Debian system and
 **Requirements:**
 
 * [homebrew](https://docs.brew.sh/Homebrew-on-Linux)
+* Build essentials: `sudo apt install build-essential`
 
 ### 1. Set up firewall
 
@@ -70,6 +71,6 @@ flux bootstrap github \
   --path=./home
 ```
 
-### 5. Install kubectl and k9s (optional)
+### 5. Install other tools (optional)
 
-Start by installing [homebrew](https://docs.brew.sh/Homebrew-on-Linux) since it's the easiest way to get kubectl and k9s.
+* `brew install k9s`
