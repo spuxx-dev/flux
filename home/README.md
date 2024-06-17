@@ -19,6 +19,8 @@ sudo ufw allow 16443/tcp
 sudo ufw default allow outgoing
 # Deny all other incoming traffic
 sudo ufw default deny incoming
+# Enable
+sudo ufw enable
 ```
 
 1. [Install microk8s](https://microk8s.io/docs/getting-started)
