@@ -29,6 +29,30 @@ sudo ufw enable
 sudo snap install microk8s --classic --channel=1.30
 ```
 
+Join the group to get the required permissions:
+
+```bash
+
+sudo usermod -a -G microk8s $USER
+mkdir -p ~/.kube
+chmod 0700 ~/.kube
+su - $USER
+```
+
+Check status:
+
+```bash
+microk8s status --wait-ready
+```
+
+3. Enable required addons
+
+```bash
+microk8s enable dns
+microk8s enable ingress
+microk8s enable hostpath-storage
+```
+
 5. Install kubectl and k9s (optional)
 
 Start by installing [homebrew](https://docs.brew.sh/Homebrew-on-Linux) since it's the easiest way to get kubectl and k9s.
