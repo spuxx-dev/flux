@@ -23,9 +23,12 @@ sudo ufw default deny incoming
 sudo ufw enable
 ```
 
-1. [Install microk8s](https://microk8s.io/docs/getting-started)
+2. [Install microk8s](https://microk8s.io/docs/getting-started)
 
 ```bash
 sudo snap install microk8s --classic --channel=1.30
 ```
 
+5. Install kubectl and k9s (optional)
+
+Start by installing [homebrew](https://docs.brew.sh/Homebrew-on-Linux) since it's the easiest way to get kubectl and k9s.
