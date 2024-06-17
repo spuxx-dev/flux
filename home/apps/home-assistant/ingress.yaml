@@ -12,8 +12,8 @@ spec:
     - host: hub.fritz.box
       http:
         paths:
-          - path: /home-assistant
-            pathType: Prefix
+          - path: /home-assistant(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: home-assistant
