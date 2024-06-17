@@ -50,6 +50,12 @@ Check status:
 microk8s status --wait-ready
 ```
 
+Get the config and copy it to `./kube/config`:
+
+```bash
+microk8s config
+```
+
 ### 3. Enable required addons
 
 ```bash
