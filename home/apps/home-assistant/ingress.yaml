@@ -6,7 +6,7 @@ metadata:
   namespace: home-assistant
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    # nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - host: hub.fritz.box
