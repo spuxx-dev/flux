@@ -4,7 +4,7 @@
 
 The following guide assumes that the system is using an Ubuntu/Debian system and that `snap` is already installed.
 
-### Requirements:
+### Requirements
 
 * [homebrew](https://docs.brew.sh/Homebrew-on-Linux)
 * Build essentials: `sudo apt install build-essential`
@@ -21,6 +21,13 @@ sudo groupadd homeassistant-admin
 sudo usermod -aG homeassistant-admin homeassistant
 # ...
 sudo chown -R :homeassistant-admin /home/homeassistant
+```
+
+Clone the repository into the `/home/homeassistant` folder:
+
+```bash
+cd /home/homeassistant
+git clone https://github.com/spuxx1701/homeassistant-config.git
 ```
 
 ### 1. Set up firewall
