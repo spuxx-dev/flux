@@ -1,22 +1,18 @@
 # Home cluster
 
-## Links
-
-* [Running Home Asssistant as unpriviled user](https://community.home-assistant.io/t/improving-docker-security-non-root-configuration/399971)
-
 ## Bootstrapping
 
 The following guide assumes that the system is using an Ubuntu/Debian system and that `snap` is already installed.
 
 ### Requirements
 
-* [homebrew](https://docs.brew.sh/Homebrew-on-Linux)
-* Build essentials: `sudo apt install build-essential`
-* openssh-server: `sudo apt install openssh-server`
+- [homebrew](https://docs.brew.sh/Homebrew-on-Linux)
+- Build essentials: `sudo apt install build-essential`
+- openssh-server: `sudo apt install openssh-server`
 
-### Users:
+### Users
 
-* homeassistant (9001): `sudo useradd -m -d /home/homeassistant -u 9001 homeassistant`
+- homeassistant (9001): `sudo useradd -m -d /home/homeassistant -u 9001 homeassistant`
 
 Set up a group to give access to the homeassistant folder to other users.
 
@@ -124,7 +120,9 @@ microk8s config
 ### 4. Enable required addons
 
 ```bash
-microk8s enable dns
+# Make microk8s directly use an external dns server since
+# it appears to be unable to properly resolve a local network's dns server
+microk8s enable dns:1.1.1.1
 microk8s enable ingress
 microk8s enable hostpath-storage
 ```
@@ -142,12 +140,6 @@ flux bootstrap github \
   --path=./home
 ```
 
-### 6. Set up required users
+### 6. Install other tools (optional)
 
-```bash
-sudo useradd -u 9001 -m -d /home/homeassistant homeassistant
-```
-
-### 7. Install other tools (optional)
-
-* `brew install k9s`
+- `brew install k9s`
