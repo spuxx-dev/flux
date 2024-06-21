@@ -22,9 +22,7 @@ spec:
           ports:
             - containerPort: 8123
           securityContext:
-            runAsUser: 1000
-            runAsGroup: 1000
-            fsGroup: 1000
+            runAsNonRoot: true
           volumeMounts:
             - name: config
               mountPath: /config
