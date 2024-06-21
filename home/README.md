@@ -12,7 +12,15 @@ The following guide assumes that the system is using an Ubuntu/Debian system and
 
 ### Users:
 
-* home-assistant (9001): `sudo useradd -m -d /home/home-assistant -u 9001 home-assistant`
+* homeassistant (9001): `sudo useradd -m -d /home/homeassistant -u 9001 homeassistant`
+
+Set up a group to give access to the homeassistant folder to other users.
+
+```bash
+sudo groupadd homeassistant-admin
+sudo usermod -aG homeassistant-admin homeassistant
+# ...
+```
 
 ### 1. Set up firewall
 
