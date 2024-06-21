@@ -4,10 +4,15 @@
 
 The following guide assumes that the system is using an Ubuntu/Debian system and that `snap` is already installed.
 
-**Requirements:**
+### Requirements:
 
 * [homebrew](https://docs.brew.sh/Homebrew-on-Linux)
 * Build essentials: `sudo apt install build-essential`
+* openssh-server: `sudo apt install openssh-server`
+
+### Users:
+
+* home-assistant (9001): `sudo useradd -m -d /home/home-assistant -u 9001 home-assistant`
 
 ### 1. Set up firewall
 
