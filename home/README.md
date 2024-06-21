@@ -17,7 +17,7 @@ The following guide assumes that the system is using an Ubuntu/Debian system and
 Set up a group to give access to the homeassistant folder to other users.
 
 ```bash
-sudo groupadd homeassistant-admin
+sudo groupadd -g 8001 homeassistant-admin
 sudo usermod -aG homeassistant-admin homeassistant
 # ...
 sudo chown -R :homeassistant-admin /home/homeassistant
