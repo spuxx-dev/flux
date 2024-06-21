@@ -21,21 +21,25 @@ spec:
           image: "ghcr.io/home-assistant/home-assistant:2024.7.0.dev202406160221"
           ports:
             - containerPort: 8123
+          securityContext:
+            runAsUser: 9001
+            runAsGroup: 8001
+            fsGroup: 8001
           volumeMounts:
             - name: config
               mountPath: /config
-            - name: dbus
-              mountPath: /run/dbus
-              readonly: true
           env:
             - nam: TZ
               value: "Europe/Berlin"
-            - name: ACTUAL_PORT
-              value: "8080"
+            - name: PUID
+              value: "9001"
+            - name: PGID:
+              value: "8001"
+            - name: UMASK
+              value: "7001"
+            - name: PACKAGES
+              value: iputils
       volumes:
         - name: config
           hostPath:
             path: /home/homeassistant/homeassistant-config
-        - name: dbus
-          hostPath:
-            path: /run/dbus
