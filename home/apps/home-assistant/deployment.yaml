@@ -24,22 +24,18 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
-            - name: localtime
-              mountPath: /etc/localtime/
-              readonly: true
             - name: dbus
               mountPath: /run/dbus
               readonly: true
           env:
+            - nam: TZ
+              value: "Europe/Berlin"
             - name: ACTUAL_PORT
               value: "8080"
       volumes:
         - name: config
           hostPath:
-            path: /homeassistant/config
-        - name: localtime
-          hostPath:
-            path: /etc/localtime
+            path: /home/homeassistant/homeassistant-config
         - name: dbus
           hostPath:
             path: /run/dbus
