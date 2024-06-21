@@ -1,5 +1,9 @@
 # Home cluster
 
+## Links
+
+* [Running Home Asssistant as unpriviled user](https://community.home-assistant.io/t/improving-docker-security-non-root-configuration/399971)
+
 ## Bootstrapping
 
 The following guide assumes that the system is using an Ubuntu/Debian system and that `snap` is already installed.
