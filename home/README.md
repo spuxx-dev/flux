@@ -28,6 +28,7 @@ Clone the repository into the `/home/homeassistant` folder:
 ```bash
 cd /home/homeassistant
 git clone https://github.com/spuxx1701/homeassistant-config.git
+sudo chmod -R g+rwx /home/homeassistant
 ```
 
 ### 1. Set up firewall
