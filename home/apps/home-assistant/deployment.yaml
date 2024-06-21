@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: home-assistant
-          image: "ghcr.io/home-assistant/home-assistant:2024.7.0.dev202406160221"
+          image: "linuxserver/homeassistant:2024.6.3"
           ports:
             - containerPort: 8123
           securityContext:
@@ -28,23 +28,23 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
-            - name: docker-run
-              mountPath: /etc/services.d/home-assistant/run
+            # - name: docker-run
+            #   mountPath: /etc/services.d/home-assistant/run
           env:
             - nam: TZ
-              value: "Europe/Berlin"
+              value: Europe/Berlin
             - name: PUID
               value: "9001"
             - name: PGID
               value: "8001"
-            - name: UMASK
-              value: "7001"
-            - name: PACKAGES
-              value: iputils
+            # - name: UMASK
+            #   value: "007"
+            # - name: PACKAGES
+            #   value: iputils
       volumes:
         - name: config
           hostPath:
             path: /home/homeassistant/homeassistant-config
-        - name: docker-run
-          hostPath:
-            path: /home/homeassistant/homeassistant-config/docker/run
+        # - name: docker-run
+        #   hostPath:
+        #     path: /home/homeassistant/homeassistant-config/docker/run
