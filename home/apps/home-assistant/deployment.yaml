@@ -31,7 +31,7 @@ spec:
             # - name: docker-run
             #   mountPath: /etc/services.d/home-assistant/run
           env:
-            - nam: TZ
+            - name: TZ
               value: Europe/Berlin
             - name: PUID
               value: "9001"
