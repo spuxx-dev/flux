@@ -28,6 +28,8 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
+            - name: docker-run
+              /etc/services.d/home-assistant/run
           env:
             - nam: TZ
               value: "Europe/Berlin"
@@ -43,3 +45,6 @@ spec:
         - name: config
           hostPath:
             path: /home/homeassistant/homeassistant-config
+        - name: docker-run
+          hostPath:
+            path: /home/homeassistant/homeassistant-config/docker/run
