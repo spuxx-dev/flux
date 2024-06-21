@@ -20,6 +20,7 @@ Set up a group to give access to the homeassistant folder to other users.
 sudo groupadd homeassistant-admin
 sudo usermod -aG homeassistant-admin homeassistant
 # ...
+sudo chown -R :homeassistant-admin /home/homeassistant
 ```
 
 ### 1. Set up firewall
