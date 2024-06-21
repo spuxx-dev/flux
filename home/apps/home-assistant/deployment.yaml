@@ -25,6 +25,10 @@ spec:
             runAsUser: 9001
             runAsGroup: 8001
             fsGroup: 8001
+            capabilities:
+              add:
+                - CAP_DAC_OVERRIDE
+                - CAP_FOWNER
           volumeMounts:
             - name: config
               mountPath: /config
