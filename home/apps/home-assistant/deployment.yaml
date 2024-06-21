@@ -22,9 +22,9 @@ spec:
           ports:
             - containerPort: 8123
           securityContext:
-            runAsUser: 9001
-            runAsGroup: 8001
-            fsGroup: 8001
+            runAsUser: 1000
+            runAsGroup: 1000
+            fsGroup: 1000
             capabilities:
               add:
                 - CAP_DAC_OVERRIDE
