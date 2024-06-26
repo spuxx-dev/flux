@@ -34,4 +34,4 @@ spec:
       volumes:
         - name: config
           hostPath:
-            path: /home/leo/homeassistan/config
+            path: /home/leo/homeassistant/config
