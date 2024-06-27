@@ -26,7 +26,6 @@ spec:
               mountPath: /config
             - name: zigbee-device
               mountPath: /dev/ttyUSB0
-              subPath: ttyUSB0
           env:
             - name: TZ
               value: Europe/Berlin
@@ -41,4 +40,3 @@ spec:
         - name: zigbee-device
           hostPath:
             path: /dev/ttyUSB0
-            type: CharDevice
