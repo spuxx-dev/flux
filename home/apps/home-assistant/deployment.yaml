@@ -19,6 +19,8 @@ spec:
       containers:
         - name: home-assistant
           image: "linuxserver/homeassistant:2024.6.3"
+          securityContext:
+            privileged: true
           ports:
             - containerPort: 8123
           volumeMounts:
