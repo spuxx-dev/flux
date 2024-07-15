@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-api-staging
-          image: spuxx/potber-api:main-20240715-123849-9d1366f2b1dc366a4e3b819c9c8174b923be00e1 # {"$imagepolicy": "potber:potber-api-staging"}
+          image: spuxx/potber-api:main-20240715-145911-9d1db112d17dd3575a769ef4df5cd1fadb175f8c # {"$imagepolicy": "potber:potber-api-staging"}
           env:
             - name: APP_PORT
               value: "3000"
