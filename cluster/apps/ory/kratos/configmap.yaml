@@ -1,12 +1,12 @@
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: ory-kratos
-  namespace: ory
-data:
-  SESSION_COOKIE_NAME: spuxx-session
-  SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: "https://spuxx.dev"
-  # Disable flows that we do not need
-  SELFSERVICE_FLOWS_REGISTRATION_ENABLED: "false"
-  SELFSERVICE_FLOWS_RECOVERY_ENABLED: "false"
+# ---
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: ory-kratos
+#   namespace: ory
+# data:
+#   SESSION_COOKIE_NAME: spuxx-session
+#   SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: "https://spuxx.dev"
+#   # Disable flows that we do not need
+#   SELFSERVICE_FLOWS_REGISTRATION_ENABLED: "false"
+#   SELFSERVICE_FLOWS_RECOVERY_ENABLED: "false"

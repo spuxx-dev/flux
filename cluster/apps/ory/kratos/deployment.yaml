@@ -1,37 +1,37 @@
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: ory-kratos
-  namespace: ory
-  labels:
-    app: ory-kratos
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: ory-kratos
-  template:
-    metadata:
-      labels:
-        app: ory-kratos
-    spec:
-      containers:
-        - name: ory-kratos
-          image: oryd/kratos:v1.1.0-distroless
-          ports:
-            - name: public
-              containerPort: 4433
-            - name: admin
-              containerPort: 4434
-          securityContext:
-            runAsUser: 9999
-          env:
-            - name: DSN
-              valueFrom:
-                secretKeyRef:
-                  name: ory-kratos
-                  key: DSN
-          envFrom:
-            - configMapRef:
-                name: ory-kratos
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: ory-kratos
+#   namespace: ory
+#   labels:
+#     app: ory-kratos
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: ory-kratos
+#   template:
+#     metadata:
+#       labels:
+#         app: ory-kratos
+#     spec:
+#       containers:
+#         - name: ory-kratos
+#           image: oryd/kratos:v1.1.0-distroless
+#           ports:
+#             - name: public
+#               containerPort: 4433
+#             - name: admin
+#               containerPort: 4434
+#           securityContext:
+#             runAsUser: 9999
+#           env:
+#             - name: DSN
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: ory-kratos
+#                   key: DSN
+#           envFrom:
+#             - configMapRef:
+#                 name: ory-kratos
