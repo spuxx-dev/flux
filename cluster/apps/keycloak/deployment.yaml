@@ -24,6 +24,7 @@ spec:
               containerPort: 8080
           securityContext:
             runAsUser: 9999
+          args: ["start-dev"]
           env:
             - name: KEYCLOAK_ADMIN_PASSWORD
               valueFrom:
