@@ -30,3 +30,20 @@ spec:
                 name: keycloak
                 port:
                   number: 8080
+    - host: login.spuxx.dev
+      http:
+        paths:
+          - path: /metrics
+            pathType: Prefix
+            backend:
+              service:
+                name: non-existant-service
+                port:
+                  number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: keycloak
+                port:
+                  number: 8080
