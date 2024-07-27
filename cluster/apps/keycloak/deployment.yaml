@@ -22,7 +22,7 @@ spec:
           ports:
             - name: http
               containerPort: 8080
-            - name: health
+            - name: management
               containerPort: 9000
           securityContext:
             runAsUser: 9999
@@ -50,8 +50,8 @@ spec:
           livenessProbe:
             httpGet:
               path: /health/live
-              port: health
+              port: management
           readinessProbe:
             httpGet:
               path: /health/ready
-              port: health
+              port: management

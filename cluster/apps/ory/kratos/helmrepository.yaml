@@ -1,9 +1,0 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: ory-kratos
-  namespace: ory
-spec:
-  interval: 60m0s
-  url: https://k8s.ory.sh/helm/charts
