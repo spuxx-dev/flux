@@ -10,6 +10,7 @@ metadata:
 spec:
   tls:
     - hosts:
+        - "keycloak.spuxx.dev"
         - "auth.spuxx.dev"
       secretName: spuxx.dev
   rules:
