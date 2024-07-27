@@ -24,8 +24,19 @@ spec:
               containerPort: 8080
           securityContext:
             runAsUser: 9999
-          args: ["start-dev"]
+          args:
+            - "start"
           env:
+            - name: KC_DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak
+                  key: KC_DB_USERNAME
+            - name: KC_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak
+                  key: KC_DB_PASSWORD
             - name: KEYCLOAK_ADMIN_PASSWORD
               valueFrom:
                 secretKeyRef:
