@@ -8,8 +8,8 @@ data:
   KC_FEATURES: "web-authn"
   KC_DB: mariadb
   KC_DB_URL_HOST: mariadb.storage.svc.cluster.local
-  KC_DB_URL_PORT: 3306
+  KC_DB_URL_PORT: "3306"
   KC_DB_URL_DATABASE: keycloak
-  KC_HEALTH_ENABLED: true
-  KC_METRICS_ENABLED: true
+  KC_HEALTH_ENABLED: "true"
+  KC_METRICS_ENABLED: "true"
   KEYCLOAK_ADMIN: spuxx
