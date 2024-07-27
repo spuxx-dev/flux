@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak
+  namespace: keycloak
+data:
+  KEYCLOAK_ADMIN: spuxx
