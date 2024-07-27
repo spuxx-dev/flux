@@ -10,11 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "keycloak.spuxx.dev"
         - "auth.spuxx.dev"
       secretName: spuxx.dev
   rules:
-    - host: keycloak.spuxx.dev
+    - host: auth.spuxx.dev
       http:
         paths:
           - path: /metrics
@@ -24,16 +23,6 @@ spec:
                 name: non-existant-service
                 port:
                   number: 80
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: keycloak
-                port:
-                  number: 8080
-    - host: auth.spuxx.dev
-      http:
-        paths:
           - path: /
             pathType: Prefix
             backend:
