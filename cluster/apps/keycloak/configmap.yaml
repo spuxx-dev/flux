@@ -5,8 +5,10 @@ metadata:
   name: keycloak
   namespace: keycloak
 data:
+  # See: https://www.keycloak.org/server/all-config
   KC_HTTP_ENABLED: "true" # We handle HTTPS on the ingress level
-  # KC_PROXY_HEADERS: forwarded
+  KC_HTTP_PORT: "8080"
+  KC_PROXY_HEADERS: xforwarded
   KC_HOSTNAME: auth.spuxx.dev
   KC_DB: mariadb
   KC_DB_URL_HOST: mariadb.storage.svc.cluster.local
