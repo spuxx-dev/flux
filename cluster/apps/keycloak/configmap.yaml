@@ -5,13 +5,14 @@ metadata:
   name: keycloak
   namespace: keycloak
 data:
-  KC_FEATURES: "web-authn"
+  KC_HTTP_ENABLED: "true" # We handle HTTPS on the ingress level
+  # KC_PROXY_HEADERS: forwarded
+  KC_HOSTNAME: auth.spuxx.dev
   KC_DB: mariadb
   KC_DB_URL_HOST: mariadb.storage.svc.cluster.local
   KC_DB_URL_PORT: "3306"
   KC_DB_URL_DATABASE: keycloak
-  KC_HTTP_ENABLED: "true" # We handle HTTPS on the ingress level
-  # KC_PROXY_HEADERS: forwarded
   KC_HEALTH_ENABLED: "true"
   KC_METRICS_ENABLED: "true"
   KEYCLOAK_ADMIN: spuxx
+  KC_FEATURES: "web-authn"
