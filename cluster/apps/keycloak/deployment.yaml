@@ -45,3 +45,11 @@ spec:
           envFrom:
             - configMapRef:
                 name: keycloak
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: http
