@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: potber-auth-staging
-          image: spuxx/potber-auth:main-20240829-072747-8e4ce481016edac96fb61b070a9c243eabf7b5f3 # {"$imagepolicy": "potber:potber-auth-staging"}
+          image: spuxx/potber-auth:main-20240906-172249-e357bce6dd5848efde4052f624e1ffcfcc8f5c1b # {"$imagepolicy": "potber:potber-auth-staging"}
           env:
             - name: VITE_API_URL
               value: https://test-api.potber.de
