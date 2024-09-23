@@ -29,7 +29,7 @@ spec:
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
       reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak"
       reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
-      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak,longhorn"
+      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak,longhorn-system"
   commonName: "*.spuxx.dev"
   dnsNames:
   - "spuxx.dev"
