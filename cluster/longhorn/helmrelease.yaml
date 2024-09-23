@@ -13,3 +13,9 @@ spec:
         name: longhorn-repo
       version: v1.7.1
   interval: 60m0s
+  values:
+    # See: https://longhorn.io/docs/1.7.1/references/helm-values/
+    csi:
+      kubeletRootDir: /var/snap/microk8s/common/var/lib/kubelet
+    longhornUI:
+      replicas: 1

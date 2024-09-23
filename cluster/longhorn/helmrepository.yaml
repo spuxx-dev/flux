@@ -4,11 +4,5 @@ metadata:
   name: longhorn-repo
   namespace: longhorn-system
 spec:
-  interval: 1m0s
+  interval: 60m0s
   url: https://charts.longhorn.io
-  values:
-    # See: https://longhorn.io/docs/1.7.1/references/helm-values/
-    csi:
-      kubeletRootDir: /var/snap/microk8s/common/var/lib/kubelet
-    longhornUI:
-      replicas: 1
