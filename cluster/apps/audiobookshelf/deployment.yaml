@@ -21,7 +21,9 @@ spec:
         ports:
         - containerPort: 8080
         securityContext:
-          runAsUser: 9003
+          runAsNonRoot: true
+          runAsUser: 9999
+          fsGroup: 9999
         env:
         - name: TZ
           value: Europe/Berlin
