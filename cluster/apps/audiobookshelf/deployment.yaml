@@ -1,9 +1,8 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: audiobookshelf
-  namespace: spuxx-dev
+  namespace: audiobookshelf
   labels:
     app: audiobookshelf
 spec:
@@ -17,36 +16,36 @@ spec:
         app: audiobookshelf
     spec:
       containers:
-        - name: audiobookshelf
-          image: ghcr.io/advplyr/audiobookshelf:2.12.3
-          ports:
-            - containerPort: 8080
-          securityContext:
-            runAsUser: 9003
-          env:
-            - name: TZ
-              value: Europe/Berlin
-            - name: PORT
-              value: "8080"
-          volumeMounts:
-            - name: audiobooks
-              mountPath: /audiobooks
-            - name: podcasts
-              mountPath: /podcasts
-            - name: config
-              mountPath: /config
-            - name: metadata
-              mountPath: /metadata
-      volumes:
+      - name: audiobookshelf
+        image: ghcr.io/advplyr/audiobookshelf:2.12.3
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsUser: 9003
+        env:
+        - name: TZ
+          value: Europe/Berlin
+        - name: PORT
+          value: "8080"
+        volumeMounts:
         - name: audiobooks
-          hostPath:
-            path: /home/audiobookshelf/audiobooks
+          mountPath: /audiobooks
         - name: podcasts
-          hostPath:
-            path: /home/audiobookshelf/podcasts
+          mountPath: /podcasts
         - name: config
-          hostPath:
-            path: /home/audiobookshelf/config
+          mountPath: /config
         - name: metadata
-          hostPath:
-            path: /home/audiobookshelf/metadata
+          mountPath: /metadata
+      volumes:
+      - name: audiobooks
+        persistentVolumeClaim:
+          claimName: audiobookshelf
+      - name: podcasts
+        persistentVolumeClaim:
+          claimName: audiobookshelf
+      - name: config
+        persistentVolumeClaim:
+          claimName: audiobookshelf
+      - name: metadata
+        persistentVolumeClaim:
+          claimName: audiobookshelf
