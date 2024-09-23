@@ -4,5 +4,6 @@ resources:
 - namespace.yaml
 - helmrepository.yaml
 - helmrelease.yaml
+- storageclass.yaml
 # Disabled until we get auth working
 # - longhorn-ui.yaml
