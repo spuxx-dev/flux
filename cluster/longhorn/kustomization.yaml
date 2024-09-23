@@ -7,3 +7,4 @@ resources:
 - storageclass.yaml
 # Disabled until we get auth working
 # - longhorn-ui.yaml
+- test-pod.yaml
