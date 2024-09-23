@@ -9,4 +9,4 @@ spec:
     name: potber-api
   policy:
     semver:
-      range: '^2.x-0'
+      range: '>=1.0.0'
