@@ -1,4 +1,3 @@
----
 # Certificate
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -16,8 +15,8 @@ spec:
     size: 4096
     rotationPolicy: Always
   usages:
-    - server auth
-    - client auth
+  - server auth
+  - client auth
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
@@ -30,8 +29,8 @@ spec:
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
       reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak"
       reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
-      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak"
+      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak,longhorn"
   commonName: "*.spuxx.dev"
   dnsNames:
-    - "spuxx.dev"
-    - "*.spuxx.dev"
+  - "spuxx.dev"
+  - "*.spuxx.dev"
