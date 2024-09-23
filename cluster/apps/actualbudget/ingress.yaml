@@ -1,4 +1,3 @@
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -10,17 +9,17 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "1m"
 spec:
   tls:
-    - hosts:
-        - "actual.spuxx.dev"
-      secretName: spuxx.dev
+  - hosts:
+    - "actual.spuxx.dev"
+    secretName: spuxx.dev
   rules:
-    - host: actual.spuxx.dev
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: actualbudget
-                port:
-                  number: 8080
+  - host: actual.spuxx.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: actualbudget
+            port:
+              number: 8080

@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,20 +15,23 @@ spec:
       labels:
         app: actualbudget
     spec:
+      securityContext:
+        fsGroup: 9999
       containers:
-        - name: actualbudget
-          image: actualbudget/actual-server:24.8.0
-          ports:
-            - containerPort: 8080
-          securityContext:
-            runAsUser: 9004
-          volumeMounts:
-            - name: data
-              mountPath: /data
-          env:
-            - name: ACTUAL_PORT
-              value: "8080"
-      volumes:
+      - name: actualbudget
+        image: actualbudget/actual-server:24.8.0
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 9999
+        volumeMounts:
         - name: data
-          hostPath:
-            path: /home/actualbudget/data
+          mountPath: /data
+        env:
+        - name: ACTUAL_PORT
+          value: "8080"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: actualbudget
