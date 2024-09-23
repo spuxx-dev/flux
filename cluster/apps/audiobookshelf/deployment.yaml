@@ -39,13 +39,13 @@ spec:
       volumes:
       - name: audiobooks
         persistentVolumeClaim:
-          claimName: audiobookshelf
+          claimName: audiobookshelf-audiobooks
       - name: podcasts
         persistentVolumeClaim:
-          claimName: audiobookshelf
+          claimName: audiobookshelf-podcasts
       - name: config
         persistentVolumeClaim:
-          claimName: audiobookshelf
+          claimName: audiobookshelf-config
       - name: metadata
         persistentVolumeClaim:
-          claimName: audiobookshelf
+          claimName: audiobookshelf-metadata
