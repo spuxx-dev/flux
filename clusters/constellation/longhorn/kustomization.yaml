@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- namespace.yaml
+- helmrepository.yaml
+- helmrelease.yaml
+- storageclass.yaml
+# Disabled until we get auth working
+# - longhorn-ui.yaml

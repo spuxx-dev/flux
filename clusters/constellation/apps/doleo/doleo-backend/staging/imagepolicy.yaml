@@ -1,0 +1,14 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: doleo-backend-staging
+  namespace: doleo
+spec:
+  imageRepositoryRef:
+    name: doleo-backend
+  filterTags:
+    pattern: "main*"
+  policy:
+    alphabetical:
+      order: asc

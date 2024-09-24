@@ -1,0 +1,12 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: potber-client-production
+  namespace: potber
+spec:
+  imageRepositoryRef:
+    name: potber-client
+  policy:
+    semver:
+      range: '^1.x-0'

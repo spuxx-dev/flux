@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: redirect-discord
+  namespace: spuxx-dev
+  annotations:
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://discord.gg/uUQmYRVZgt"
+spec:
+  tls:
+    - hosts:
+        - "*.spuxx.dev"
+      secretName: spuxx.dev
+  rules:
+    - host: discord.spuxx.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dummy-service
+                port:
+                  number: 80

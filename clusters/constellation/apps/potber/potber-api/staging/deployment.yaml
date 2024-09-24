@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: potber-api-staging
+  namespace: potber
+  labels:
+    app: potber-api-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: potber-api-staging
+  template:
+    metadata:
+      labels:
+        app: potber-api-staging
+    spec:
+      containers:
+        - name: potber-api-staging
+          image: spuxx/potber-api:main-20240904-193924-59b4120af4782a87f8a1ddafab1a848ccf9e219e # {"$imagepolicy": "potber:potber-api-staging"}
+          env:
+            - name: APP_PORT
+              value: "3000"
+            - name: APP_CLIENT_URL
+              value: https://test.potber.de
+            - name: APP_API_URL
+              value: https://test-api.potber.de
+            - name: SWAGGER_TEST_THREAD_ID
+              value: "219289"
+            - name: CORS_ALLOWED_ORIGINS
+              value: https://test.potber.de,http://localhost:4200,http://schleppi.fritz.box:4200
+            - name: AUTH_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: potber-api
+                  key: AUTH_JWT_SECRET
+          ports:
+            - containerPort: 3000
+          securityContext:
+            runAsNonRoot: true
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
