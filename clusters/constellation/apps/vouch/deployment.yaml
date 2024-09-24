@@ -24,7 +24,7 @@ spec:
         - name: http
           containerPort: 9090
         securityContext:
-          runAsNonRoot: 999
+          runAsNonRoot: true
           runAsUser: 999
         env:
         - name: OAUTH_CLIENT_SECRET
