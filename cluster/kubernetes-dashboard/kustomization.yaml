@@ -1,8 +1,0 @@
-# Sets up an ingress rule for the kubernetes dashboard on a Microk8s cluster.
-# Run 'microk8s enable dashboard' to enable the default kubernetes dashboard.
-# Documentation: https://microk8s.io/docs/addon-dashboard
----
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ingress.yaml
