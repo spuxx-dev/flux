@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - "auth.spuxx.dev"
+    - "constellation.spuxx.dev"
     secretName: spuxx.dev
   rules:
-  - host: auth.spuxx.dev
+  - host: constellation.spuxx.dev
     http:
       paths:
       - path: /oauth2
