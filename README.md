@@ -35,9 +35,9 @@ The repository is maintained with Flux. In case of a new fresh install of the cl
 flux bootstrap github \
   --owner=spuxx1701 \
   --repository=flux \
-  --branch=master \
+  --branch=main \
   --token-auth \
-  --path=./cluster \
+  --path=./clusters/constellation \
   --components-extra=image-automation-controller,image-reflector-controller
 ```
 
