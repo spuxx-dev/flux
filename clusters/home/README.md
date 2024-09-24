@@ -137,7 +137,7 @@ flux bootstrap github \
   --repository=flux \
   --branch=master \
   --token-auth \
-  --path=./home
+  --path=./clusters/home
 ```
 
 ### 6. Install other tools (optional)
