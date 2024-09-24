@@ -135,7 +135,7 @@ FluxCD is deployed via the [bootstrap](https://fluxcd.io/flux/cmd/flux_bootstrap
 flux bootstrap github \
   --owner=spuxx1701 \
   --repository=flux \
-  --branch=master \
+  --branch=main \
   --token-auth \
   --path=./clusters/home
 ```
