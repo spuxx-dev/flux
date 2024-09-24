@@ -9,13 +9,13 @@ metadata:
 spec:
   tls:
   - hosts:
-    - "oauth2.spuxx.dev"
+    - "auth.spuxx.dev"
     secretName: spuxx.dev
   rules:
-  - host: oauth2.spuxx.dev
+  - host: auth.spuxx.dev
     http:
       paths:
-      - path: /
+      - path: /oauth2
         pathType: Prefix
         backend:
           service:
