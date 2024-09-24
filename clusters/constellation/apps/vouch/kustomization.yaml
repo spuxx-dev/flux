@@ -4,7 +4,7 @@ metadata:
   name: keycloak
 resources:
 - namespace.yaml
-# - configmap.yaml
-# - deployment.yaml
-# - service.yaml
-# - ingress.yaml
+- configmap.yaml
+- deployment.yaml
+- service.yaml
+- ingress.yaml
