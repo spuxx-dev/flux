@@ -5,6 +5,7 @@ metadata:
   namespace: vouch
 data:
   # See: https://github.com/vouch/vouch-proxy?tab=readme-ov-file#running-from-docker
+  VOUCH_PORT: 9090
   VOUCH_DOMAINS: spuxx.dev
   OAUTH_AUTH_URL: https://auth.spuxx.dev/realms/admin/protocol/openid-connect/auth
   OAUTH_TOKEN_URL: https://auth.spuxx.dev/realms/admin/protocol/openid-connect/token
