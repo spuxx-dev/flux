@@ -2,6 +2,31 @@
 
 This repository houses the cluster configuration for my Kubernetes cluster.
 
+## Prerequisites
+
+### Required packages
+
+The following packages need to be installed:
+
+```
+sudo apt install \
+  ufw \ # Firewall
+  snapd \ # Required by microk8s
+  open-iscsi \ # Required by longhorn, see https://longhorn.io/docs/1.7.1/deploy/install/#installation-requirements
+```
+
+### Firewall configuration
+
+```bash
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw allow 22/tcp # SSH
+sudo ufw allow 16443/tcp # Microk8s' API server
+sudo ufw enable
+```
+
+## Setup microk8s
+
 ## Bootstrap Flux
 
 The repository is maintained with Flux. In case of a new fresh install of the cluster, Flux needs to be bootstrapped.
@@ -25,7 +50,6 @@ cat age.agekey |
 kubectl create secret generic sops-age \
 --namespace=flux-system \
 --from-file=age.agekey=/dev/stdin
-
 ```
 
 ## Setting up observability
@@ -36,21 +60,13 @@ You can enable the observability stack (grafana, prometheus, loki etc.) via:
 microk8s enable observability
 ```
 
-## Setting up persistent storage
+## Other Tweaks
 
-### Option 1: Hostpath storage
-
-Microk8s offers an addon to easily implement persistent storage via a directory on the host sytem. The guide can be found [here](https://microk8s.io/docs/addon-hostpath-storage).
+To reduce the disk space occupied by Kubernetes, it can be useful to make its garbage collection more aggressive (see [here](https://stackoverflow.com/a/77270875)):
 
 ```bash
-microk8s enable hostpath-storage
-```
-
-We usually use UID `9999` for container runtimes that do not require access to storage on the host. For containers that do, we create new users that have their own home folders. The following users are reserved by existing applications:
-
-```bash
-9001 - mariadb
-9002 - monitoring
-9003 - audiobookshelf
-9004 - actualbudget
+# /var/snap/microk8s/current/args/kubelet
+--image-gc-high-threshold=50
+--image-gc-low-threshold=40
+--maximum-dead-containers=0
 ```
