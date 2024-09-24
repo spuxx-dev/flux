@@ -8,11 +8,15 @@ This repository houses the cluster configuration for my Kubernetes cluster.
 
 The following packages need to be installed:
 
-```
+- `ufw` (Firewall)
+- `snapd` (Required by microk8s)
+- `open-iscsi` (Required by longhorn, see https://longhorn.io/docs/1.7.1/deploy/install/#installation-requirements)
+
+```bash
 sudo apt install \
-  ufw \ # Firewall
-  snapd \ # Required by microk8s
-  open-iscsi \ # Required by longhorn, see https://longhorn.io/docs/1.7.1/deploy/install/#installation-requirements
+  ufw \
+  snapd \
+  open-iscsi
 ```
 
 ### Firewall configuration
