@@ -19,7 +19,7 @@ spec:
         fsGroup: 999
       containers:
       - name: vouch
-        image: uay.io/vouch/vouch-proxy:alpine-0.40.0
+        image: quay.io/vouch/vouch-proxy:alpine-0.40.0
         ports:
         - name: http
           containerPort: 9090
