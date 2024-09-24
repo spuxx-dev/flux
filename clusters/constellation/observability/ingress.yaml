@@ -1,4 +1,3 @@
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -9,17 +8,17 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   tls:
-    - hosts:
-        - "grafana.spuxx.dev"
-      secretName: spuxx.dev
+  - hosts:
+    - "*.spuxx.dev"
+    secretName: spuxx.dev
   rules:
-    - host: grafana.spuxx.dev
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: kube-prom-stack-grafana
-                port:
-                  number: 3000
+  - host: constellation.spuxx.dev
+    http:
+      paths:
+      - path: /grafana
+        pathType: Prefix
+        backend:
+          service:
+            name: kube-prom-stack-grafana
+            port:
+              number: 3000
