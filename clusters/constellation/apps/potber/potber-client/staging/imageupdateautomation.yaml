@@ -12,14 +12,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: master
+        branch: main
     commit:
       author:
         email: flux@github.com
         name: Flux
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: master
+      branch: main
   update:
     path: ./clusters/constellation/apps/potber/potber-client/staging
     strategy: Setters
