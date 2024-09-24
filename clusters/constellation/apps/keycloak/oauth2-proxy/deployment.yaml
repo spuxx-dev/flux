@@ -36,7 +36,7 @@ spec:
         - name: OAUTH2_PROXY_EMAIL_DOMAINS
           value: "*"
         - name: OAUTH2_PROXY_REDIRECT_URL
-          value: "https://oauth2-proxy.spuxx.dev/oauth2/callback"
+          value: "https://oauth2.spuxx.dev/callback"
         - name: OAUTH2_PROXY_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
