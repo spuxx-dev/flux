@@ -7,5 +7,6 @@ spec:
   # See: https://microk8s.io/docs/change-cidr#configure-calico
   # See: https://docs.tigera.io/calico/latest/network-policy/encrypt-cluster-pod-traffic#enable-wireguard-for-a-cluster
   wireguardEnabled: true
+  wireguardEnabledV6: true
   logSeverityScreen: Info
   reportingInterval: 0s
