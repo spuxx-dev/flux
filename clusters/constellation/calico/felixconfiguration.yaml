@@ -9,5 +9,6 @@ spec:
   wireguardEnabled: true
   wireguardEnabledV6: true
   vxlanEnabled: true
+  bpfLogLevel: ""
   logSeverityScreen: Info
   reportingInterval: 0s
