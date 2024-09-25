@@ -6,16 +6,18 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/auth-url: "https://constellation.spuxx.dev/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://constellation.spuxx.dev/oauth2/start?rd=$escaped_request_uri"
 spec:
   tls:
   - hosts:
-    - "longhorn.spuxx.dev"
+    - "*.spuxx.dev"
     secretName: spuxx.dev
   rules:
-  - host: longhorn.spuxx.dev
+  - host: constellation.spuxx.dev
     http:
       paths:
-      - path: /
+      - path: /longhorn
         pathType: Prefix
         backend:
           service:
