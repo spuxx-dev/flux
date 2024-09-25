@@ -1,0 +1,11 @@
+apiVersion: crd.projectcalico.org/v1
+kind: FelixConfiguration
+metadata:
+  name: default
+spec:
+  # Enable wireguard protection. Original microk8s config located at /var/snap/microk8s/current/args/cni-network/cni.yaml
+  # See: https://microk8s.io/docs/change-cidr#configure-calico
+  # See: https://docs.tigera.io/calico/latest/network-policy/encrypt-cluster-pod-traffic#enable-wireguard-for-a-cluster
+  wireguardEnabled: true
+  logSeverityScreen: Info
+  reportingInterval: 0s
