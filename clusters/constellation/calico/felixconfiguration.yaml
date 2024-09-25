@@ -8,5 +8,6 @@ spec:
   # See: https://docs.tigera.io/calico/latest/network-policy/encrypt-cluster-pod-traffic#enable-wireguard-for-a-cluster
   wireguardEnabled: true
   wireguardEnabledV6: true
+  vxlanEnabled: true
   logSeverityScreen: Info
   reportingInterval: 0s
