@@ -19,7 +19,7 @@ spec:
         fsGroup: 9999
       containers:
       - name: hello-world
-        image: spuxx/nginx-hello-world:latest
+        image: spuxx/nginx-hello-world:1.1.0
         ports:
         - containerPort: 8080
         securityContext:
