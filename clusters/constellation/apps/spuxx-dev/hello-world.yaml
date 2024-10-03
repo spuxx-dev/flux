@@ -55,10 +55,10 @@ spec:
     - "*.spuxx.dev"
     secretName: spuxx.dev
   rules:
-  - host: hello-world.spuxx.dev
+  - host: constellation.spuxx.dev
     http:
       paths:
-      - path: /
+      - path: /hello-world
         pathType: Prefix
         backend:
           service:
