@@ -6,8 +6,7 @@ metadata:
 spec:
   imageRepositoryRef:
     name: spuxx-astro
-  filterTags:
-    pattern: 'master*'
   policy:
-    alphabetical:
-      order: asc
+    semver:
+      range: '>=1.0.0'
+
