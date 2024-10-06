@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spuxx-astro
+  namespace: spuxx-dev
+  labels:
+    app: spuxx-astro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spuxx-astro
+  template:
+    metadata:
+      labels:
+        app: spuxx-astro
+    spec:
+      containers:
+      - name: spuxx-astro
+        image: spuxx/spuxx-astro:0.0.1 # {"$imagepolicy": "spuxx-dev:spuxx-astro"}
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsNonRoot: true
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080

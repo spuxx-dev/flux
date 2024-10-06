@@ -1,0 +1,70 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spuxx-dev
+  namespace: spuxx-dev
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  tls:
+  - hosts:
+    - "*.spuxx.dev"
+    secretName: spuxx.dev
+  rules:
+  - host: spuxx.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: spuxx-astro
+            port:
+              number: 8080
+  - host: www.spuxx.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: spuxx-astro
+            port:
+              number: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: leopoldhock-de-redirect
+  namespace: spuxx-dev
+  annotations:
+    nginx.ingress.kubernetes.io/server-snippet: |
+      return 301 https://spuxx.dev;
+spec:
+  tls:
+  - hosts:
+    - "*.leopoldhock.de"
+    secretName: leopoldhock.de
+  rules:
+  - host: leopoldhock.de
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: spuxx-dev
+            port:
+              number: 8080
+  - host: www.leopoldhock.de
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: spuxx-dev
+            port:
+              number: 8080
+
