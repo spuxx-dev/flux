@@ -9,7 +9,6 @@ volumeBindingMode: Immediate
 # Note that updating storage class parameters isn't supported. After an update, it might be required to manually delete the storage class and reconcile afterwards.
 # See: https://longhorn.io/docs/1.7.1/references/storage-class-parameters/
 parameters:
-  # This is the number of replicas of the data that will be distributed among the nodes by longhorn.
   numberOfReplicas: "2"
   staleReplicaTimeout: "2880"
   fromBackup: ""
