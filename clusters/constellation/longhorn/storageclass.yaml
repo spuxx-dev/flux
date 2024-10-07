@@ -6,6 +6,7 @@ provisioner: driver.longhorn.io
 allowVolumeExpansion: true
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
+# Note that updating storage class parameters isn't supported. After an update, it might be required to manually delete the storage class and reconcile afterwards.
 parameters:
   # This is the number of replicas of the data that will be distributed among the nodes by longhorn.
   numberOfReplicas: "2"
