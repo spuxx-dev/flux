@@ -50,7 +50,7 @@ sudo systemctl enable systemd-resolved
 sudo systemctl start systemd-resolved
 ```
 
-Afterwards, you might need to align DNS entries in `etc/systemd/resolved.conf`.
+Afterwards, you might need to align DNS entries in `/etc/systemd/resolved.conf`.
 
 ## Setup microk8s
 
@@ -73,7 +73,7 @@ su - $USER
 Wait for microk8s to get ready and check the node.
 
 ```bash
-microk8s status --wait-readyl
+microk8s status --wait-ready
 microk8s kubectl get nodes
 ```
 
