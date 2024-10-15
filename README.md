@@ -123,6 +123,45 @@ You can enable the observability stack (grafana, prometheus, loki etc.) via:
 microk8s enable observability
 ```
 
+## Verify Wireguard setup
+
+Microk8s uses [calico](https://projectcalico.docs.tigera.io/getting-started/kubernetes/quickstart) as the CNI. Calico can be configured to use [Wireguard](https://docs.tigera.io/calico/latest/network-policy/encrypt-cluster-pod-traffic) for node-to-node encryption. When adding a new node to the cluster, Wireguard should be set up by default. To verify that it is working, you can do the following:
+
+```bash
+kubectl get felixconfiguration default -o yaml | grep wireguardEnabled
+# Should return:
+# wireguardEnabled: true
+# wireguardEnabledV6: true
+```
+
+```bash
+kubectl get node <node-name> -o yaml | grep -A5 calico
+# Should return:
+# projectcalico.org/IPv4WireguardInterfaceAddr: <some_ip_address>
+# projectcalico.org/WireguardPublicKey: <public_key>
+```
+
+`projectcalico.org/WireguardPublicKey` needs to match across all nodes.
+
+Furthermore, you can check wireguard setup on the hosts themselves:
+
+```bash
+sudo ip link show wireguard.cali
+# Should return something like:
+# wireguard.cali: ...
+```
+
+```bash
+sudo wg show
+# Should return something like:
+# interface: wireguard.cali
+#   public key: <public_key>
+#   private key: (hidden)
+#  listening port: <some_port>
+```
+
+Again, `public key` must match the public key in the node annotations and that of all other nodes.
+
 ## Other Tweaks
 
 To reduce the disk space occupied by Kubernetes, it can be useful to make its garbage collection more aggressive (see [here](https://stackoverflow.com/a/77270875)):
