@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: doleo-backend-production
-        image: spuxx/doleo-2-backend # {"$imagepolicy": "doleo:doleo-backend-production"}
+        image: spuxx/doleo-2-backend:2.4.1
         env:
         - name: APP_CLIENT_URL
           value: https://doleo-2.de
