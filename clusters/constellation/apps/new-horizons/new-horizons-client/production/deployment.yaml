@@ -6,7 +6,7 @@ metadata:
   labels:
     app: new-horizons-client-production
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: new-horizons-client-production
@@ -16,13 +16,13 @@ spec:
         app: new-horizons-client-production
     spec:
       containers:
-        - name: new-horizons-client-production
-          image: spuxx/new-horizons-client:0.0.0 # {"$imagepolicy": "new-horizons:new-horizons-client-production"}
-          ports:
-            - containerPort: 8080
-          securityContext:
-            runAsNonRoot: true
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 8080
+      - name: new-horizons-client-production
+        image: spuxx/new-horizons-client:0.0.0 # {"$imagepolicy": "new-horizons:new-horizons-client-production"}
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsNonRoot: true
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
