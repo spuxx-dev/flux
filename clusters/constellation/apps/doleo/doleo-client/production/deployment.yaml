@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: doleo-client-production
-        image: spuxx/doleo-2-client:main-20241016-070939-512f0dea5b7c940ee0dd4a0deb5a0d5c9303648c
+        image: spuxx/doleo-2-client:main-20241016-083650-38af79e812f59dc3d958e379517c450718292050
         ports:
         - containerPort: 8080
         securityContext:
