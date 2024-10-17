@@ -6,7 +6,7 @@ metadata:
   labels:
     app: potber-auth-staging
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: potber-auth-staging
