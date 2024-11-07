@@ -6,7 +6,6 @@ metadata:
 spec:
   imageRepositoryRef:
     name: spuxx-api-staging
-  policy:
   filterTags:
     pattern: 'main*'
   policy:
