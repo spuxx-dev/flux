@@ -25,7 +25,7 @@ spec:
           value: default
         - name: CORS_ALLOWED_ORIGINS
           value: http://localhost:5173,http://schleppi.fritz.box:5173,https://toledo-staging.spuxx.dev
-        - name: DATABASE_DB:
+        - name: DATABASE_DB
           value: spuxx-api-staging
         - name: AUTH_CLIENT_SECRET
           valueFrom:
