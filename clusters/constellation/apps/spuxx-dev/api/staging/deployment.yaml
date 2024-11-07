@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spuxx-api-staging
+  namespace: spuxx-dev
+  labels:
+    app: spuxx-api-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spuxx-api-staging
+  template:
+    metadata:
+      labels:
+        app: spuxx-api-staging
+    spec:
+      containers:
+      - name: spuxx-api-staging
+        image: spuxx/spuxx-api # {"$imagepolicy": "spuxx-dev:spuxx-api-staging"}
+        env:
+        - name: APP_BASE_URL
+          value: https://api-staging.spuxx.dev
+        - name: APP_LOG_LEVEL
+          value: default
+        - name: CORS_ALLOWED_ORIGINS
+          value: http://localhost:5173,http://schleppi.fritz.box:5173,https://toledo-staging.spuxx.dev
+        - name: AUTH_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: spuxx-api-staging
+              key: AUTH_CLIENT_SECRET
+        - name: AUTH_COOKIE_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: spuxx-api-staging
+              key: AUTH_COOKIE_SECRET
+        - name: DATABASE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: spuxx-api-staging
+              key: DATABASE_USERNAME
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: spuxx-api-staging
+              key: DATABASE_PASSWORD
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsNonRoot: true
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080

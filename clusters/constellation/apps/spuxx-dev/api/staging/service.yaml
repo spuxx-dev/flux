@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spuxx-api-staging
+  namespace: spuxx-dev
+  labels:
+    monitoringGroup: spuxx-api
+spec:
+  selector:
+    app: spuxx-api-staging
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
