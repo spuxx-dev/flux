@@ -53,5 +53,5 @@ spec:
           runAsNonRoot: true
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: /alive
             port: 8080
