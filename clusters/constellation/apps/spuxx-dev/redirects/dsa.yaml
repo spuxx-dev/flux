@@ -4,7 +4,7 @@ metadata:
   name: redirect-dsa
   namespace: spuxx-dev
   annotations:
-    nginx.ingress.kubernetes.io/permanent-redirect: "https://www.dropbox.com/scl/fo/bla6fgwqj00mdbl2ml1j3/h?rlkey=49y9dt67zbqjz9iv0wjdh0nrg&dl=0"
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://nx61120.your-storageshare.de/s/wYDJix9ezR6CYtz"
 spec:
   tls:
     - hosts:
