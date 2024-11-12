@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: redirect-pnp
+  namespace: spuxx-dev
+  annotations:
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://nx61120.your-storageshare.de/s/zfG4aqSqW6bfryY"
+spec:
+  tls:
+  - hosts:
+    - "*.spuxx.dev"
+    secretName: spuxx.dev
+  rules:
+  - host: pnp.spuxx.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dummy-service
+            port:
+              number: 80
