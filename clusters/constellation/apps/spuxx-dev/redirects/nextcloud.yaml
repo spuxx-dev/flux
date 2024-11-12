@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: redirect-dsa
+  name: redirect-nextcloud
   namespace: spuxx-dev
   annotations:
     nginx.ingress.kubernetes.io/permanent-redirect: "https://nx61120.your-storageshare.de"
