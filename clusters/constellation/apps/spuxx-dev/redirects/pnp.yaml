@@ -4,7 +4,7 @@ metadata:
   name: redirect-pnp
   namespace: spuxx-dev
   annotations:
-    nginx.ingress.kubernetes.io/permanent-redirect: https://nx61120.your-storageshare.de/s/CWCqSKcGGcjGHk8
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://nx61120.your-storageshare.de/s/CWCqSKcGGcjGHk8"
 spec:
   tls:
   - hosts:
