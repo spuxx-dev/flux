@@ -17,7 +17,7 @@ spec:
     - "*.spuxx.dev"
     secretName: spuxx.dev
   rules:
-  - host: api-staging.spuxx.dev
+  - host: toledo-staging.spuxx.dev
     http:
       paths:
       - path: /
