@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: toledo-staging
+  namespace: spuxx-dev
+  labels:
+    app: toledo-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: toledo-staging
+  template:
+    metadata:
+      labels:
+        app: toledo-staging
+    spec:
+      containers:
+      - name: toledo-staging
+        image: spuxx/toledo:main # {"$imagepolicy": "spuxx-dev:toledo-staging"}
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsNonRoot: true
+        livenessProbe:
+          httpGet:
+            path: /alive
+            port: 8080

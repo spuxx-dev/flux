@@ -1,0 +1,9 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: toledo-staging
+  namespace: spuxx-dev
+spec:
+  image: spuxx/toledo
+  interval: 10m
+  provider: generic

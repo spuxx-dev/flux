@@ -1,0 +1,13 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: toledo-staging
+  namespace: spuxx-dev
+spec:
+  imageRepositoryRef:
+    name: toledo-staging
+  filterTags:
+    pattern: 'main*'
+  policy:
+    alphabetical:
+      order: asc

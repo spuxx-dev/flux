@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: toledo-staging
+  namespace: spuxx-dev
+  labels:
+    monitoringGroup: toledo
+spec:
+  selector:
+    app: toledo-staging
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
