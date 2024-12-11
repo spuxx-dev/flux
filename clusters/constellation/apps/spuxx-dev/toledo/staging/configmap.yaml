@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: toledo-staging
+  namespace: spuxx-dev
+data:
+  injected-config.js: |
+    window.INJECTED_CONFIG = {
+      API_URL: 'https://api-staging.spuxx.dev',
+    };

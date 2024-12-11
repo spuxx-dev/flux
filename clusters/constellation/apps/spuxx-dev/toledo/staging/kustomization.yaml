@@ -4,6 +4,7 @@ resources:
 - imagerepository.yaml
 - imagepolicy.yaml
 - imageupdateautomation.yaml
+- configmap.yaml
 - deployment.yaml
 - service.yaml
 - ingress.yaml
