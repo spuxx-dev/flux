@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: toledo-staging
-        image: spuxx/toledo:main-20241216115127-4d21a7a # {"$imagepolicy": "spuxx-dev:toledo-staging"}
+        image: spuxx/toledo:main-20241216121846-d58d095 # {"$imagepolicy": "spuxx-dev:toledo-staging"}
         ports:
         - containerPort: 8080
         securityContext:
