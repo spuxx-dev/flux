@@ -6,6 +6,8 @@ metadata:
   namespace: paperless-ngx
 data:
   PAPERLESS_REDIS: redis://redis:6379
+  PAPERLESS_DBENGINE: mariadb
+  PAPERLESS_DBHOST: mariadb
   PAPERLESS_DBHOST: mariadb
   PAPERLESS_DBPORT: "3306"
   # USERMAP_UID: "9999"

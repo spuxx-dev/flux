@@ -3,6 +3,7 @@
     "actualbudget",
     "audiobookshelf",
     "configmap",
+    "DBENGINE",
     "DBHOST",
     "DBPASS",
     "DBPORT",
