@@ -1,3 +1,17 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb
+  namespace: database
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: longhorn-storage
+  resources:
+    requests:
+      storage: 25Gi
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -21,7 +35,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mariadb
+  name: mariadb-static
   namespace: database
 spec:
   accessModes:
