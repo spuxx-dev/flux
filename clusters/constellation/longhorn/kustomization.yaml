@@ -6,3 +6,4 @@ resources:
 - helmrelease.yaml
 - storageclass.yaml
 - longhorn-ui.yaml
+- backups.yaml

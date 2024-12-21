@@ -1,0 +1,18 @@
+apiVersion: longhorn.io/v1beta1
+kind: RecurringJob
+metadata:
+  name: backups
+  namespace: longhorn-system
+spec:
+  # Create backups weekly
+  cron: "0 0 * * 1"
+  task: "backup"
+  groups:
+  - default
+  # Retain backups for about 6 months
+  retain: 24
+  concurrency: 1
+  # Every fourth week, create a full backup
+  full-backup-interval: 3
+  labels:
+    label/1: recurring
