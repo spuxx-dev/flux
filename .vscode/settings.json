@@ -1,3 +1,19 @@
 {
-  "cSpell.words": ["kustomize", "mariadb", "redis"]
+  "cSpell.words": [
+    "actualbudget",
+    "audiobookshelf",
+    "configmap",
+    "DBHOST",
+    "DBPASS",
+    "DBPORT",
+    "DBUSER",
+    "keycloak",
+    "kustomize",
+    "letsencrypt",
+    "mariadb",
+    "nginx",
+    "PKCS",
+    "redis",
+    "USERMAP"
+  ]
 }

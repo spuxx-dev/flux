@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webserver
+  namespace: paperless-ngx
+data:
+  PAPERLESS_REDIS: redis://broker:6379
+  PAPERLESS_DBHOST: mariadb
+  PAPERLESS_DBPORT: "3306"
+  USERMAP_UID: "9999"
+  USERMAP_GID: "9999"
+  PAPERLESS_URL: paperless.spuxx.dev
+  PAPERLESS_TIME_ZONE: Europe/Berlin

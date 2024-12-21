@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb
+  namespace: paperless-ngx
+  labels:
+    app: mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      securityContext:
+        fsGroup: 9999
+      containers:
+      - name: mariadb
+        image: mariadb:11.5.2
+        ports:
+        - containerPort: 3306
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 9999
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/mysql
+        - name: config
+          mountPath: /etc/mysql/conf.d
+        envFrom:
+        - configMapRef:
+          name: mariadb
+        - secretRef:
+          name: mariadb
+        # env:
+        # - name: MARIADB_ROOT_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mariadb
+        #       key: MARIADB_ROOT_PASSWORD
+        # - name: MARIADB_USER
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mariadb
+        #       key: MARIADB_USER
+        # - name: MARIADB_USER_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mariadb
+        #       key: MARIADB_USER_PASSWORD
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: mariadb-dynamic
+      - name: config
+        configMap:
+          name: mariadb-config
