@@ -13,6 +13,6 @@ spec:
   retain: 24
   concurrency: 1
   # Every fourth week, create a full backup
-  fullBackupInterval: 3
+  # fullBackupInterval: 3
   labels:
     label/1: recurring
