@@ -32,7 +32,7 @@ spec:
       volumes:
       - name: redis
         persistentVolumeClaim:
-          claimName: paperless-ngx-redis-dynamic
+          claimName: redis-dynamic
 ---
 apiVersion: v1
 kind: Service

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: paperless-ngx-redis-dynamic
+  name: redis-dynamic
   namespace: paperless-ngx
 spec:
   accessModes:
