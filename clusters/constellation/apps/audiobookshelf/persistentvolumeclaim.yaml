@@ -35,7 +35,7 @@ spec:
   storageClassName: longhorn-storage
   resources:
     requests:
-      storage: 500Mi
+      storage: 1Gi
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -48,4 +48,4 @@ spec:
   storageClassName: longhorn-storage
   resources:
     requests:
-      storage: 500Mi
+      storage: 1Gi
