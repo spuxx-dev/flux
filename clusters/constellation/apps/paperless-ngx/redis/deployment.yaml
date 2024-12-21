@@ -2,24 +2,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: broker
+  name: redis
   namespace: paperless-ngx
   labels:
-    app: broker
+    app: redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: broker
+      app: redis
   template:
     metadata:
       labels:
-        app: broker
+        app: redis
     spec:
       securityContext:
         fsGroup: 9999
       containers:
-      - name: broker
+      - name: redis
         image: docker.io/library/redis:7
         ports:
         - containerPort: 6379
