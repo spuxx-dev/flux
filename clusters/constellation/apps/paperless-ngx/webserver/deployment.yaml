@@ -17,7 +17,7 @@ spec:
         app: webserver
     spec:
       securityContext:
-        fsGroup: 9999
+        fsGroup: 1000
       containers:
       - name: webserver
         image: ghcr.io/paperless-ngx/paperless-ngx:2.13.5
@@ -25,8 +25,8 @@ spec:
         - containerPort: 8000
         securityContext:
           runAsNonRoot: true
-          runAsUser: 9999
-          runAsGroup: 9999
+          runAsUser: 1000
+          runAsGroup: 1000
         volumeMounts:
         - name: webserver-storage
           mountPath: /usr/src/paperless/data

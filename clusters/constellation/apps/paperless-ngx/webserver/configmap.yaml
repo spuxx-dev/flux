@@ -8,7 +8,7 @@ data:
   PAPERLESS_REDIS: redis://redis:6379
   PAPERLESS_DBHOST: mariadb
   PAPERLESS_DBPORT: "3306"
-  USERMAP_UID: "9999"
-  USERMAP_GID: "9999"
+  # USERMAP_UID: "9999"
+  # USERMAP_GID: "9999"
   PAPERLESS_URL: paperless.spuxx.dev
   PAPERLESS_TIME_ZONE: Europe/Berlin
