@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: broker
+  namespace: paperless-ngx
+  labels:
+    app: broker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: broker
+  template:
+    metadata:
+      labels:
+        app: broker
+    spec:
+      securityContext:
+        fsGroup: 9999
+      containers:
+      - name: broker
+        image: docker.io/library/redis:7
+        ports:
+        - containerPort: 6379
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 9999
+        volumeMounts:
+        - name: redis
+          mountPath: /data
+      volumes:
+      - name: redis
+        persistentVolumeClaim:
+          claimName: paperless-ngx-redis-dynamic
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: broker
+  namespace: paperless-ngx
+spec:
+  selector:
+    app: broker
+  ports:
+  - protocol: TCP
+    port: 6379
+    targetPort: 6379
