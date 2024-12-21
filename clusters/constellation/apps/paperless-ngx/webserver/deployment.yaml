@@ -41,7 +41,7 @@ spec:
           subPath: consume
         envFrom:
         - configMapRef:
-          name: webserver
+            name: webserver
         env:
         - name: PAPERLESS_DBUSER
           valueFrom:
