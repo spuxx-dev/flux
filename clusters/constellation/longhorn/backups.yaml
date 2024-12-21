@@ -5,7 +5,7 @@ metadata:
   namespace: longhorn-system
 spec:
   # Create backups each Monday at 00:00
-  cron: "*/5 * * * *"
+  cron: "0 0 * * 1"
   task: "backup"
   groups:
   - default
