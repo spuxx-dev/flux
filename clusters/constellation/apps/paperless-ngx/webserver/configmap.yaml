@@ -5,7 +5,7 @@ metadata:
   name: webserver
   namespace: paperless-ngx
 data:
-  PAPERLESS_REDIS: redis://broker:6379
+  PAPERLESS_REDIS: redis://redis:6379
   PAPERLESS_DBHOST: mariadb
   PAPERLESS_DBPORT: "3306"
   USERMAP_UID: "9999"
