@@ -33,16 +33,16 @@ spec:
         volumeMounts:
         - name: data
           mountPath: /audiobooks
-          subPath: /audiobooks
+          subPath: audiobooks
         - name: data
           mountPath: /podcasts
-          subPath: /podcasts
+          subPath: podcasts
         - name: data
           mountPath: /config
-          subPath: /config
+          subPath: config
         - name: data
           mountPath: /metadata
-          subPath: /metadata
+          subPath: metadata
       volumes:
       - name: data
         persistentVolumeClaim:
