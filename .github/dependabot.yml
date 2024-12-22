@@ -1,10 +1,30 @@
 version: 2
 updates:
 - package-ecosystem: "docker"
-  directory: "/clusters/constellation/**"
+  directory: "/clusters/constellation/apps/actualbudget"
   schedule:
     interval: "daily"
 - package-ecosystem: "docker"
-  directory: "/clusters/home/**"
+  directory: "/clusters/constellation/apps/audiobookshelf"
+  schedule:
+    interval: "daily"
+- package-ecosystem: "docker"
+  directory: "/clusters/constellation/apps/database/adminer"
+  schedule:
+    interval: "daily"
+- package-ecosystem: "docker"
+  directory: "/clusters/constellation/apps/database/mariadb"
+  schedule:
+    interval: "daily"
+- package-ecosystem: "docker"
+  directory: "/clusters/constellation/apps/keycloak"
+  schedule:
+    interval: "daily"
+- package-ecosystem: "docker"
+  directory: "/clusters/constellation/apps/keycloak/oauth2-proxy"
+  schedule:
+    interval: "daily"
+- package-ecosystem: "docker"
+  directory: "/clusters/home/apps/home-assistant"
   schedule:
     interval: "daily"
