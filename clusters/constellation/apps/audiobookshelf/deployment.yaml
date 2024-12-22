@@ -31,24 +31,19 @@ spec:
         - name: PORT
           value: "8080"
         volumeMounts:
-        - name: audiobooks
+        - name: data
           mountPath: /audiobooks
-        - name: podcasts
+          subPath: /audiobooks
+        - name: data
           mountPath: /podcasts
-        - name: config
+          subPath: /podcasts
+        - name: data
           mountPath: /config
-        - name: metadata
+          subPath: /config
+        - name: data
           mountPath: /metadata
+          subPath: /metadata
       volumes:
-      - name: audiobooks
+      - name: data
         persistentVolumeClaim:
-          claimName: audiobookshelf-audiobooks
-      - name: podcasts
-        persistentVolumeClaim:
-          claimName: audiobookshelf-podcasts
-      - name: config
-        persistentVolumeClaim:
-          claimName: audiobookshelf-config
-      - name: metadata
-        persistentVolumeClaim:
-          claimName: audiobookshelf-metadata
+          claimName: audiobookshelf-static
