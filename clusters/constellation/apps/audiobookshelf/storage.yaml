@@ -9,7 +9,7 @@ spec:
   storageClassName: longhorn-storage
   resources:
     requests:
-      storage: 3c0Gi
+      storage: 30Gi
 ---
 
 
