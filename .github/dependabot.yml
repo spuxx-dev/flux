@@ -1,18 +1,10 @@
 version: 2
 updates:
 - package-ecosystem: "docker"
-  directory: "/clusters/constellation/storage/mariadb"
+  directory: "/clusters/constellation/**"
   schedule:
     interval: "daily"
 - package-ecosystem: "docker"
-  directory: "/clusters/constellation/apps/actualbudget"
-  schedule:
-    interval: "daily"
-- package-ecosystem: "docker"
-  directory: "/clusters/constellation/apps/adminer"
-  schedule:
-    interval: "daily"
-- package-ecosystem: "docker"
-  directory: "/clusters/constellation/apps/audiobookshelf"
+  directory: "/clusters/home/**"
   schedule:
     interval: "daily"
