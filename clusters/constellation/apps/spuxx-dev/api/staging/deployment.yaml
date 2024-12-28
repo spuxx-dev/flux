@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: spuxx-api-staging
-        image: spuxx/spuxx-api:main-20241228105949-db43325 # {"$imagepolicy": "spuxx-dev:spuxx-api-staging"}
+        image: spuxx/spuxx-api:main-20241228194203-45c7ec4 # {"$imagepolicy": "spuxx-dev:spuxx-api-staging"}
         env:
         - name: APP_BASE_URL
           value: https://api-staging.spuxx.dev
