@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: keycloakwp
-          image: keycloak/keycloak:26.0.8
+          image: keycloak/keycloak:26.1.0
           ports:
             - name: http
               containerPort: 8080
