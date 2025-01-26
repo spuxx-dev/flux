@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: redirect-pnp
+  name: redirect-dsa
   namespace: spuxx-dev
   annotations:
     nginx.ingress.kubernetes.io/permanent-redirect: "https://spuxx1701.github.io/dsa-docs/"
