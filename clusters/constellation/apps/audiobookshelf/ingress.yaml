@@ -6,7 +6,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: "999m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "1999m"
 spec:
   tls:
   - hosts:
