@@ -19,7 +19,7 @@ spec:
         fsGroup: 9999
       containers:
       - name: mariadb
-        image: mariadb:11.6.2
+        image: mariadb:11.7.2
         ports:
         - containerPort: 3306
         securityContext:
