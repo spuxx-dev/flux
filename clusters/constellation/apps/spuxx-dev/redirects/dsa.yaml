@@ -4,7 +4,7 @@ metadata:
   name: redirect-dsa
   namespace: spuxx-dev
   annotations:
-    nginx.ingress.kubernetes.io/permanent-redirect: "https://spuxx1701.github.io/dsa-docs/"
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://spuxx-dev.github.io/dsa-docs/"
 spec:
   tls:
     - hosts:
