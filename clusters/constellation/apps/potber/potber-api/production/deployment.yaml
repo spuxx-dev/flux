@@ -6,7 +6,7 @@ metadata:
   labels:
     app: potber-api-production
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: potber-api-production
@@ -38,6 +38,13 @@ spec:
             - containerPort: 3000
           securityContext:
             runAsNonRoot: true
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
           livenessProbe:
             httpGet:
               path: /healthz
