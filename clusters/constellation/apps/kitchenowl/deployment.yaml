@@ -21,7 +21,7 @@ spec:
         - name: kitchenowl
           image: tombursch/kitchenowl:v0.6.11
           ports:
-            - containerPort: 9000
+            - containerPort: 8080
           securityContext:
             runAsNonRoot: true
             runAsUser: 9999
