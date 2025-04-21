@@ -36,6 +36,17 @@ spec:
             - name: data
               mountPath: /data
           env:
+            - name: FRONT_URL
+              value: https://kitchenowl.spuxx.dev
+            - name: OIDC_ISSUER
+              value: https://keycloak.spuxx.dev/auth/realms/main
+            - name: OIDC_CLIENT_ID
+              value: kitchenowl
+            - name: OIDC_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: kitchenowl
+                  key: OIDC_CLIENT_SECRET
             - name: JWT_SECRET_KEY
               valueFrom:
                 secretKeyRef:
