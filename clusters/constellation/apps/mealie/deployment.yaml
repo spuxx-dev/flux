@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mealie
+  namespace: mealie
+  labels:
+    app: mealie
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mealie
+  template:
+    metadata:
+      labels:
+        app: mealie
+    spec:
+      securityContext:
+        fsGroup: 9999
+      containers:
+        - name: mealie
+          image: ghcr.io/mealie-recipes/mealie:v2.8.0
+          ports:
+            - containerPort: 9000
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 9999
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: data
+              mountPath: /app/data/
+          env:
+            # See https://docs.mealie.io/documentation/getting-started/installation/backend-config/
+            - name: ALLOW_SIGNUP
+              value: "false"
+            - name: TZ
+              value: Europe/Berlin
+            - name: BASE_URL
+              value: https://mealie.spuxx.dev
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: mealie
