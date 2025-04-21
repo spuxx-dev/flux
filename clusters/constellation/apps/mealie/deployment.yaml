@@ -45,7 +45,7 @@ spec:
               value: https://mealie.spuxx.dev
             - name: PUID
               value: "9999"
-            - name: GUID
+            - name: PGID
               value: "9999"
       volumes:
         - name: data
