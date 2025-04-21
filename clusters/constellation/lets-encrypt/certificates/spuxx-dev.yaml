@@ -15,8 +15,8 @@ spec:
     size: 4096
     rotationPolicy: Always
   usages:
-  - server auth
-  - client auth
+    - server auth
+    - client auth
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
@@ -27,10 +27,10 @@ spec:
       # across namespaces.
       # See https://cert-manager.io/docs/tutorials/syncing-secrets-across-namespaces/#using-reflector
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
-      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak,longhorn-system,audiobookshelf,actualbudget,database,paperless-ngx"
+      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak,longhorn-system,audiobookshelf,actualbudget,database,kitchenowl"
       reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
-      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak,longhorn-system,audiobookshelf,actualbudget,database,paperless-ngx"
+      reflector.v1.k8s.emberstack.com/reflection-auto-namespaces: "kube-system,flux-system,observability,spuxx-dev,keycloak,longhorn-system,audiobookshelf,actualbudget,database,kitchenowl"
   commonName: "*.spuxx.dev"
   dnsNames:
-  - "spuxx.dev"
-  - "*.spuxx.dev"
+    - "spuxx.dev"
+    - "*.spuxx.dev"
