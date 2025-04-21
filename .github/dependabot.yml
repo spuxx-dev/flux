@@ -21,6 +21,10 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "docker"
+    directory: "/clusters/constellation/apps/kitchenowl"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
     directory: "/clusters/constellation/apps/keycloak"
     schedule:
       interval: "daily"

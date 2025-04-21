@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kitchenowl
+  namespace: kitchenowl
+  labels:
+    app: kitchenowl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kitchenowl
+  template:
+    metadata:
+      labels:
+        app: kitchenowl
+    spec:
+      securityContext:
+        fsGroup: 9999
+      containers:
+        - name: kitchenowl
+          image: tombursch/kitchenowl:v0.6.11
+          ports:
+            - containerPort: 9000
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 9999
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          env:
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: kitchenowl
+                  key: JWT_SECRET_KEY
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: kitchenowl
