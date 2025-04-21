@@ -39,7 +39,7 @@ spec:
             - name: FRONT_URL
               value: https://kitchenowl.spuxx.dev
             - name: OIDC_ISSUER
-              value: https://keycloak.spuxx.dev/realms/main
+              value: https://auth.spuxx.dev/realms/main
             - name: OIDC_CLIENT_ID
               value: kitchenowl
             - name: OIDC_CLIENT_SECRET
