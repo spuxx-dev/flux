@@ -43,6 +43,10 @@ spec:
               value: Europe/Berlin
             - name: BASE_URL
               value: https://mealie.spuxx.dev
+            - name: PUID
+              value: 9999
+            - name: GUID
+              value: 9999
       volumes:
         - name: data
           persistentVolumeClaim:
