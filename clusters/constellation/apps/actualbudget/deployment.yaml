@@ -19,7 +19,7 @@ spec:
         fsGroup: 9999
       containers:
       - name: actualbudget
-        image: actualbudget/actual-server:25.3.1
+        image: actualbudget/actual-server:25.4.0
         ports:
         - containerPort: 8080
         securityContext:
