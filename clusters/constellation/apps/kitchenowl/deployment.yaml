@@ -55,4 +55,4 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: kitchenowl
+            claimName: kitchenowl-aa0bbf6a-41ad-4592-be6b-47a5ca5cf223
