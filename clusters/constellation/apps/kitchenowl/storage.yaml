@@ -17,7 +17,7 @@ spec:
     volumeAttributes:
       numberOfReplicas: "2"
       staleReplicaTimeout: "2880"
-    volumeHandle: "kitchenowl-backup-bcc2839e64424dcb"
+    volumeHandle: "kitchenowl-backup-1aa5bd69e0f749a9"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
