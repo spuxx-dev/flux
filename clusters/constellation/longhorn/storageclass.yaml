@@ -1,3 +1,8 @@
+# Note that updating storage class parameters isn't supported. After an update,
+# it might be required to manually delete the storage class and reconcile afterwards.
+# We use versioned storage classes and make sure apps migrate their volumes to the
+# new version before deleting the old version.
+# See: https://longhorn.io/docs/1.7.1/references/storage-class-parameters/
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
@@ -6,8 +11,21 @@ provisioner: driver.longhorn.io
 allowVolumeExpansion: true
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
-# Note that updating storage class parameters isn't supported. After an update, it might be required to manually delete the storage class and reconcile afterwards.
-# See: https://longhorn.io/docs/1.7.1/references/storage-class-parameters/
+parameters:
+  numberOfReplicas: "2"
+  staleReplicaTimeout: "2880"
+  fromBackup: ""
+  fsType: "ext4"
+  replicaAutoBalance: best-effort
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: longhorn-storage-v2
+provisioner: driver.longhorn.io
+allowVolumeExpansion: true
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
 parameters:
   numberOfReplicas: "2"
   staleReplicaTimeout: "2880"
