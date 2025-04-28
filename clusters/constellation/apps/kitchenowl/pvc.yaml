@@ -6,7 +6,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: longhorn-storage
+  storageClassName: longhorn-storage-v2
   resources:
     requests:
       storage: 5Gi
