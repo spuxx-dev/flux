@@ -32,3 +32,37 @@ spec:
   resources:
     requests:
       storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: kitchenowl-backup-1aa5bd69e0f749a9
+  namespace: kitchenowl
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: longhorn-storage
+  csi:
+    driver: driver.longhorn.io
+    fsType: ext4
+    volumeAttributes:
+      numberOfReplicas: "2"
+      staleReplicaTimeout: "2880"
+    volumeHandle: "kitchenowl-backup-1aa5bd69e0f749a9"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: kitchenowl-backup-1aa5bd69e0f749a9
+  namespace: kitchenowl
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn-storage
+  volumeName: kitchenowl-backup-1aa5bd69e0f749a9
+  resources:
+    requests:
+      storage: 5Gi
